@@ -4,8 +4,8 @@
   width: 110px;
 }
 
-.main {
-  &__tasks-completed-text {
+.tasks-widget {
+  &__completed-text {
     @include medium-13-font;
     color: $dark-blue-color;
   }

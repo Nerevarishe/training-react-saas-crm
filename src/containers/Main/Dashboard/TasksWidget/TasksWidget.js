@@ -2,7 +2,7 @@ import React from "react";
 import WidgetCard from "../../../../components/WidgetCard";
 import "./TasksWidget.scss";
 import ProgressBar from "./ProgressBar";
-import SelectedDate from "./SelectedDate";
+import DateSelector from "./DateSelector";
 
 const widgetContent = {
   filterOptions: [
@@ -22,7 +22,7 @@ const widgetContent = {
 };
 
 const customTitle = (
-  <span className="main__tasks-completed-text">8 task completed out of 10</span>
+  <span className="tasks-widget__completed-text">8 task completed out of 10</span>
 );
 
 const TasksWidget = () => {
@@ -36,60 +36,7 @@ const TasksWidget = () => {
       {/*TODO: Connect to tasks*/}
       <ProgressBar max={10} value={8} />
 
-      <SelectedDate />
-
-      <div className="main__tasks-week-days">
-        <ul className="main__tasks-week-list">
-          <li className="main__tasks-week-items">
-            <span className="main__tasks-week-day">Sun</span>
-
-            <span className="main__tasks-week-date main__tasks-week-date_selected">
-              23
-            </span>
-          </li>
-
-          <li className="main__tasks-week-items">
-            <span className="main__tasks-week-day main__tasks-week-day_today">
-              Mon
-            </span>
-
-            <span className="main__tasks-week-date main__tasks-week-date_today">
-              24
-            </span>
-          </li>
-
-          <li className="main__tasks-week-items">
-            <span className="main__tasks-week-day">Tue</span>
-            <span className="main__tasks-week-date">25</span>
-          </li>
-
-          <li className="main__tasks-week-items">
-            <span className="main__tasks-week-day">Wed</span>
-
-            <span className="main__tasks-week-date">26</span>
-          </li>
-
-          <li className="main__tasks-week-items">
-            <span className="main__tasks-week-day">Thu</span>
-
-            <span className="main__tasks-week-date">27</span>
-          </li>
-
-          <li className="main__tasks-week-items">
-            <span className="main__tasks-week-day">Fri</span>
-
-            <span className="main__tasks-week-date">28</span>
-          </li>
-
-          <li className="main__tasks-week-items">
-            <span className="main__tasks-week-day">Sat</span>
-
-            <span className="main__tasks-week-date">29</span>
-          </li>
-        </ul>
-      </div>
-
-      <div className="main__tasks-divider"></div>
+      <DateSelector />
 
       <div className="main__tasks-card">
         <span className="main__tasks-card-type">Reminder</span>
