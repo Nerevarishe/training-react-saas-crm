@@ -12,20 +12,20 @@
   }
 
   &__sidebar-link-icon {
+    width: 20px;
+    height: 20px;
     margin-right: 14px;
     vertical-align: middle;
   }
 
   &__sidebar-link {
+    display: inline-block;
+    width: 100%;
     @include medium-13-font;
     text-decoration: none;
     color: $dark-blue-color;
 
     &_active {
-      color: $accent-blue-color;
-    }
-
-    &:hover {
       color: $accent-blue-color;
     }
   }

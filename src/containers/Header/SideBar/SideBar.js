@@ -25,6 +25,7 @@ const sideBarItems = [
       imgActive: dashboardActiveImg,
     },
     text: "Dashboard",
+    isActive: true
   },
   {
     image: {
@@ -106,7 +107,7 @@ const SideBar = () => {
 
       <ul className="header__sidebar-menu">
         {sideBarItems.map(item => (
-          <SideBarItem data={item}/>
+          <SideBarItem key={item.text} data={item} />
         ))}
       </ul>
 

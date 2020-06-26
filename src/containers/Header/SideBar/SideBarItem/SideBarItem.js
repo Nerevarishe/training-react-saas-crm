@@ -1,16 +1,35 @@
-import React from "react";
-import classes from "./SideBarItem.module.scss";
+import React, {useState} from "react";
+import styles from "./SideBarItem.module.scss";
 
 const SideBarItem = (props) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return props.data.divider ? (
-    <div className={classes["header__sidebar-divider"]} />
+    <div className={styles["header__sidebar-divider"]} />
   ) : (
-    <li className={classes["header__sidebar-item"]}>
-      <a href="/" className={classes["header__sidebar-link"]}>
+    <li
+      className={styles["header__sidebar-item"]}
+    >
+      <a
+        href="#"
+        className={
+          props.data.isActive || isHovered
+            ? `${styles["header__sidebar-link"]} ${styles["header__sidebar-link_active"]}`
+            : styles["header__sidebar-link"]
+        }
+        onMouseEnter={() => setIsHovered(!isHovered)}
+        onMouseLeave={() => setIsHovered(!isHovered)}
+        // onClick={() => (true)}
+      >
         <img
-          src={props.data.image.img}
+          // src={props.data.image.img}
+          src={
+            props.data.isActive || isHovered
+              ? props.data.image.imgActive
+              : props.data.image.img
+          }
           alt={props.data.image.alt}
-          className={classes["header__sidebar-link-icon"]}
+          className={styles["header__sidebar-link-icon"]}
         />
         {props.data.text}
       </a>
