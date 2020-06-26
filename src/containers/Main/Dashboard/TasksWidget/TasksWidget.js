@@ -23,7 +23,9 @@ const widgetContent = {
 };
 
 const customTitle = (
-  <span className="tasks-widget__completed-text">8 task completed out of 10</span>
+  <span className="tasks-widget__completed-text">
+    8 task completed out of 10
+  </span>
 );
 
 const TasksWidget = () => {

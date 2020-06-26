@@ -6,8 +6,8 @@ import SideBar from "./SideBar";
 const Header = () => {
   return (
     <header className="header">
-      <GlobalSearch/>
-      <SideBar/>
+      <GlobalSearch />
+      <SideBar />
     </header>
   );
 };

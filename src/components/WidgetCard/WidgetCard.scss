@@ -1,13 +1,13 @@
 @import "../../scss/imports";
 
 .widget-card {
-    position: relative;
-    min-width: 400px;
-    min-height: 300px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-    padding: 16px 24px;
-    background: $white-color;
-    border-radius: 4px;
+  position: relative;
+  min-width: 400px;
+  min-height: 300px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  padding: 16px 24px;
+  background: $white-color;
+  border-radius: 4px;
 
   &__title-text {
     @include medium-15-font;

@@ -36,7 +36,12 @@ const DateSelector = (props) => {
       <div className="tasks-widget__week-days">
         <ul className="tasks-widget__week-list">
           {week.map((day) => (
-            <WeekItem key={day} day={day} currentWeekDay={currentWeekDay} firstWeekDate={firstWeekDate} />
+            <WeekItem
+              key={day}
+              day={day}
+              currentWeekDay={currentWeekDay}
+              firstWeekDate={firstWeekDate}
+            />
           ))}
         </ul>
       </div>

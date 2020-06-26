@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import styles from "./SideBarItem.module.scss";
 
 const SideBarItem = (props) => {
@@ -7,9 +7,7 @@ const SideBarItem = (props) => {
   return props.data.divider ? (
     <div className={styles["header__sidebar-divider"]} />
   ) : (
-    <li
-      className={styles["header__sidebar-item"]}
-    >
+    <li className={styles["header__sidebar-item"]}>
       <a
         href="#"
         className={

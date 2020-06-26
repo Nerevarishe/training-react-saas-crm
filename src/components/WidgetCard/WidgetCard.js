@@ -26,8 +26,11 @@ const WidgetCard = (props) => {
             <span className="widget-card__filter-text">Show: </span>
 
             <select name="" id="" className="widget-card__filter-select">
-              {props.widgetContent.filterOptions.map(option => (
-                <option value={option.value} className="widget-card__filter-option">
+              {props.widgetContent.filterOptions.map((option) => (
+                <option
+                  value={option.value}
+                  className="widget-card__filter-option"
+                >
                   {option.text}
                 </option>
               ))}

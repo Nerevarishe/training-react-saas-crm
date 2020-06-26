@@ -5,7 +5,11 @@ import "./ProgressBar.scss";
 const ProgressBar = (props) => {
   return (
     <div className="tasks-widget__progress">
-      <progress className="tasks-widget__progressbar" max={props.max} value={props.value} />
+      <progress
+        className="tasks-widget__progressbar"
+        max={props.max}
+        value={props.value}
+      />
     </div>
   );
 };
