@@ -20,14 +20,6 @@ import SideBarItem from "./SideBarItem";
 const sideBarItems = [
   {
     image: {
-      alt: "Chat Icon",
-      img: chatImg,
-      imgActive: chatActiveImg,
-    },
-    text: "Chat",
-  },
-  {
-    image: {
       alt: "Dashboard Icon",
       img: dashboardImg,
       imgActive: dashboardActiveImg,
@@ -36,19 +28,11 @@ const sideBarItems = [
   },
   {
     image: {
-      alt: "Contacts Icon",
-      img: contactsImg,
-      imgActive: contactsActiveImg,
+      alt: "Tasks Icon",
+      img: tasksImg,
+      imgActive: tasksActiveImg,
     },
-    text: "Contacts",
-  },
-  {
-    image: {
-      alt: "Deals Icon",
-      img: dealsImg,
-      imgActive: dealsActiveImg,
-    },
-    text: "Deals",
+    text: "Tasks",
   },
   {
     image: {
@@ -60,11 +44,27 @@ const sideBarItems = [
   },
   {
     image: {
-      alt: "Tasks Icon",
-      img: tasksImg,
-      imgActive: tasksActiveImg,
+      alt: "Contacts Icon",
+      img: contactsImg,
+      imgActive: contactsActiveImg,
     },
-    text: "Tasks",
+    text: "Contacts",
+  },
+  {
+    image: {
+      alt: "Chat Icon",
+      img: chatImg,
+      imgActive: chatActiveImg,
+    },
+    text: "Chat",
+  },
+  {
+    image: {
+      alt: "Deals Icon",
+      img: dealsImg,
+      imgActive: dealsActiveImg,
+    },
+    text: "Deals",
   },
   {
     divider: true
