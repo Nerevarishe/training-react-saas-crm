@@ -1,7 +1,7 @@
 @import "/../../scss/vars";
 
 .header {
-  position: absolute;
+  position: fixed;
   background: $white-color;
   z-index: 100;
 }

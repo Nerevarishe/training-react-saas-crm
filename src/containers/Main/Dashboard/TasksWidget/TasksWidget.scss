@@ -1,0 +1,12 @@
+@import "../../../../scss/imports";
+
+.widget-card__filter-select{
+  width: 110px;
+}
+
+.main {
+  &__tasks-completed-text {
+    @include medium-13-font;
+    color: $dark-blue-color;
+  }
+}
