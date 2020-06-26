@@ -1,7 +1,8 @@
 import React, { Fragment, useState } from "react";
-import PropTypes, { string } from "prop-types";
+// import PropTypes, { string } from "prop-types";
 import moment from "moment";
 import "./DateSelector.scss";
+import WeekItem from "./WeekItem";
 
 const DateSelector = (props) => {
   // 0. List of week days
@@ -35,38 +36,35 @@ const DateSelector = (props) => {
       <div className="tasks-widget__week-days">
         <ul className="tasks-widget__week-list">
           {week.map((day) => (
-            <li key={day} className="tasks-widget__week-items">
-              <span
-                className={
-                  day === currentWeekDay
-                    ? "tasks-widget__week-day tasks-widget__week-day_today"
-                    : "tasks-widget__week-day"
-                }
-              >
-                {day}
-              </span>
-              <button
-                className={
-                  day === currentWeekDay
-                    ? "tasks-widget__week-date tasks-widget__week-date_today"
-                    : "tasks-widget__week-date"
-                }
-              >
-                {day === "Sun"
-                  ? firstWeekDate.format("DD")
-                  : moment(firstWeekDate.add(1, "d")).format("DD")}
-              </button>
-            </li>
+            // <li key={day} className="tasks-widget__week-items">
+            //   <span
+            //     className={
+            //       day === currentWeekDay
+            //         ? "tasks-widget__week-day tasks-widget__week-day_today"
+            //         : "tasks-widget__week-day"
+            //     }
+            //   >
+            //     {day}
+            //   </span>
+            //   <button
+            //     className={
+            //       day === currentWeekDay
+            //         ? "tasks-widget__week-date tasks-widget__week-date_today"
+            //         : "tasks-widget__week-date"
+            //     }
+            //   >
+            //     {day === "Sun"
+            //       ? firstWeekDate.format("DD")
+            //       : moment(firstWeekDate.add(1, "d")).format("DD")}
+            //   </button>
+            // </li>
+            <WeekItem key={day} day={day} currentWeekDay={currentWeekDay} firstWeekDate={firstWeekDate} />
           ))}
         </ul>
       </div>
       <div className="tasks-widget__divider" />
     </Fragment>
   );
-};
-
-DateSelector.propTypes = {
-  timestamp: PropTypes.string,
 };
 
 export default DateSelector;
