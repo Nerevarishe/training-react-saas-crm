@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import moment, { Moment } from "moment";
+import "./WeekItem.scss";
 
 const WeekItem = (props) => {
   return (
@@ -32,7 +33,7 @@ const WeekItem = (props) => {
 WeekItem.propTypes = {
   day: PropTypes.string,
   currentWeekDay: PropTypes.string,
-  firstWeekDate: PropTypes.object
+  firstWeekDate: PropTypes.object,
 };
 
 export default WeekItem;
