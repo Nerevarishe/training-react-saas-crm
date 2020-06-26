@@ -1,0 +1,14 @@
+import React from "react";
+import GlobalSearch from "./GlobalSearch";
+import SideBar from "./SideBar";
+
+const Header = () => {
+  return (
+    <header className="header">
+      <GlobalSearch/>
+      <SideBar/>
+    </header>
+  );
+};
+
+export default Header;

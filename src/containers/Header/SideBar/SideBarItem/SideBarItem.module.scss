@@ -1,0 +1,41 @@
+@import "../../../../scss/vars";
+@import "../../../../scss/fonts";
+
+.header {
+  &__sidebar-item {
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+      margin-top: 49px;
+    }
+  }
+
+  &__sidebar-link-icon {
+    margin-right: 14px;
+    vertical-align: middle;
+  }
+
+  &__sidebar-link {
+    @include medium-13-font;
+    text-decoration: none;
+    color: $dark-blue-color;
+
+    &_active {
+      color: $accent-blue-color;
+    }
+
+    &:hover {
+      color: $accent-blue-color;
+    }
+  }
+
+  &__sidebar-divider {
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    background: $divider-color;
+    margin-bottom: 24px;
+  }
+}
