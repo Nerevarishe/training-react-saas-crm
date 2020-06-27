@@ -16,6 +16,13 @@ import settingsActiveImg from "./img/svg/settings-active.svg";
 import settingsImg from "./img/svg/settings.svg";
 import toggleImg from "./img/svg/toggle.svg";
 import SideBarItem from "./SideBarItem";
+import ProfileUser from "./ProfileUser";
+
+const profile = {
+  avatar: "https://api.adorable.io/avatars/100/Sierra_Ferguson.png",
+  name: "Sierra Ferguson",
+  email: "s.ferguson@gmail.com",
+};
 
 const sideBarItems = [
   {
@@ -89,21 +96,27 @@ const SideBar = () => {
 
       <div className="header__divider" />
 
-      <div className="header__user">
-        <div className="header__avatar-block">
-          <img
-            src="./assets/img/profile_photo.png"
-            alt="Profile Photo"
-            className="header__avatar-img"
-          />
-        </div>
+      <ProfileUser
+        avatar={profile.avatar}
+        name={profile.name}
+        email={profile.email}
+      />
 
-        <div className="header__user-info">
-          <span className="header__username-text">Sierra Ferguson</span>
+      {/*<div className="header__user">*/}
+      {/*  <div className="header__avatar-block">*/}
+      {/*    <img*/}
+      {/*      src="./assets/img/profile_photo.png"*/}
+      {/*      alt="Profile Photo"*/}
+      {/*      className="header__avatar-img"*/}
+      {/*    />*/}
+      {/*  </div>*/}
 
-          <span className="header__email-text">s.ferguson@gmail.com</span>
-        </div>
-      </div>
+      {/*  <div className="header__user-info">*/}
+      {/*    <span className="header__username-text">Sierra Ferguson</span>*/}
+
+      {/*    <span className="header__email-text">s.ferguson@gmail.com</span>*/}
+      {/*  </div>*/}
+      {/*</div>*/}
 
       <ul className="header__sidebar-menu">
         {sideBarItems.map((item) => (
