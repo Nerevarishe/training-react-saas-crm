@@ -1,0 +1,15 @@
+@import "../../../../../scss/imports";
+
+.view-user {
+
+  &__person-avatar {
+    max-width: 24px;
+    max-height: 24px;
+    margin-right: 12px;
+  }
+
+  &__person-name {
+    @include regular-13-font;
+    color: $table-gray-color;
+  }
+}

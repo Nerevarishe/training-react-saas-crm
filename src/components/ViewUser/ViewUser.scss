@@ -1,0 +1,21 @@
+@import "../../scss/imports";
+
+.view-user {
+  &__person {
+    display: flex;
+  }
+
+  &__user-info {
+  }
+
+  &__person-avatar {
+    border-radius: 50%;
+    vertical-align: middle;
+  }
+
+  &__person-name {
+  }
+
+  &__person-email {
+  }
+}

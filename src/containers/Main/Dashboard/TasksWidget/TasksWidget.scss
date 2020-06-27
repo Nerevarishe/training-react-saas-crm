@@ -1,7 +1,10 @@
 @import "../../../../scss/imports";
 
-.widget-card__filter-select {
-  width: 110px;
+.widget-card {
+  width: 635px;
+  &__filter-select {
+    width: 110px;
+  }
 }
 
 .tasks-widget {
