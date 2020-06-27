@@ -17,10 +17,8 @@ const SideBarItem = (props) => {
         }
         onMouseEnter={() => setIsHovered(!isHovered)}
         onMouseLeave={() => setIsHovered(!isHovered)}
-        // onClick={() => (true)}
       >
         <img
-          // src={props.data.image.img}
           src={
             props.data.isActive || isHovered
               ? props.data.image.imgActive

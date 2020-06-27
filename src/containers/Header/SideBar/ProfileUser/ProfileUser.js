@@ -1,11 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 import PropTypes from "prop-types";
 import ViewUser from "../../../../components/ViewUser";
-import "./ProfileUser.scss";
+import styles from "./ProfileUser.module.scss";
+
+console.log(styles);
 
 const ProfileUser = (props) => {
+
   return (
-    <ViewUser avatar={props.avatar} email={props.email} name={props.name} />
+    <ViewUser avatar={props.avatar} email={props.email} name={props.name} type={"profile"}/>
   );
 };
 
