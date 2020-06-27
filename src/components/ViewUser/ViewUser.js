@@ -1,19 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./ViewUser.scss";
+import styles from "./ViewUser.module.scss";
 
 const ViewUser = (props) => {
   return (
-    <div className="view-user__person">
+    <div className={styles["view-user__person"]}>
       <img
         src={props.avatar}
         alt={props.name}
-        className="view-user__person-avatar"
+        className={styles["view-user__person-avatar"]}
       />
-      <div className="view-user__user-info">
-        <span className="view-user__person-name">{props.name}</span>
+      <div className={styles["view-user__user-info"]}>
+        <span className={styles["view-user__user-info"]}>{props.name}</span>
         {props.email ? (
-          <span className="header__email-text">{props.email}</span>
+          <span className={styles["view-user__person-email"]}>{props.email}</span>
         ) : null}
       </div>
     </div>
