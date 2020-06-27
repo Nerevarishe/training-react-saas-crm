@@ -1,6 +1,6 @@
 import React from "react";
 import WidgetCard from "../../../../components/WidgetCard";
-import "./TasksWidget.scss";
+import styles from "./TasksWidget.module.scss";
 import ProgressBar from "./ProgressBar";
 import DateSelector from "./DateSelector";
 import TaskCard from "../../../../components/TaskCard";
@@ -59,7 +59,7 @@ const widgetContent = {
 };
 
 const customTitle = (
-  <span className="tasks-widget__completed-text">
+  <span className={styles["tasks-widget__completed-text"]}>
     8 task completed out of 10
   </span>
 );
@@ -83,8 +83,8 @@ const TasksWidget = () => {
         ))
       }
 
-      <div className="main__tasks-show-more">
-        <button className="main__tasks-show-more-btn">Show more</button>
+      <div className={styles["main__tasks-show-more"]}>
+        <button className={styles["main__tasks-show-more-btn"]}>Show more</button>
       </div>
     </WidgetCard>
   );

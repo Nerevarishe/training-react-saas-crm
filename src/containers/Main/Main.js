@@ -1,10 +1,10 @@
 import React from "react";
-import "./Main.scss";
+import styles from "./Main.module.scss";
 import Dashboard from "./Dashboard";
 
 const Main = () => {
   return (
-    <main className="main">
+    <main className={styles["main"]}>
       <Dashboard />
     </main>
   );
