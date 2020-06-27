@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./ProgressBar.scss";
+import styles from "./ProgressBar.module.scss";
 
 const ProgressBar = (props) => {
   return (
-    <div className="tasks-widget__progress">
+    <div className={styles["tasks-widget__progress"]}>
       <progress
-        className="tasks-widget__progressbar"
+        className={styles["tasks-widget__progressbar"]}
         max={props.max}
         value={props.value}
       />
