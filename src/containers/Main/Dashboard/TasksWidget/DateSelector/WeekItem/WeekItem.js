@@ -1,16 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
-import moment, { Moment } from "moment";
-import "./WeekItem.scss";
+import moment from "moment";
+import styles from "./WeekItem.module.scss";
 
 const WeekItem = (props) => {
   return (
-    <li key={props.day} className="tasks-widget__week-items">
+    <li key={props.day} className={styles["tasks-widget__week-items"]}>
       <span
         className={
           props.day === props.currentWeekDay
-            ? "tasks-widget__week-day tasks-widget__week-day_today"
-            : "tasks-widget__week-day"
+            ? `${styles["tasks-widget__week-day"]} ${styles["tasks-widget__week-day_today"]}`
+            : styles["tasks-widget__week-day"]
         }
       >
         {props.day}
@@ -18,8 +18,8 @@ const WeekItem = (props) => {
       <button
         className={
           props.day === props.currentWeekDay
-            ? "tasks-widget__week-date tasks-widget__week-date_today"
-            : "tasks-widget__week-date"
+            ? `${styles["tasks-widget__week-date"]} ${styles["tasks-widget__week-date_today"]}`
+            : styles["tasks-widget__week-date"]
         }
       >
         {props.day === "Sun"
