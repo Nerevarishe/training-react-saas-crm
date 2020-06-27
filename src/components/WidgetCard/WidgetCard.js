@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
-import "./WidgetCard.scss";
+import styles from "./WidgetCard.module.scss";
 
 // const widgetContent = {
 //   title: "Title",
@@ -10,26 +10,26 @@ import "./WidgetCard.scss";
 const WidgetCard = (props) => {
   return (
     <Fragment>
-      <div className="widget-card">
+      <div className={styles["widget-card"]}>
         {props.showTitle ? (
           props.customTitle ? (
             props.customTitle
           ) : (
-            <span className="widget-card__title-text">
+            <span className={styles["widget-card__title-text"]}>
               {props.widgetContent.title}
             </span>
           )
         ) : null}
 
         {props.showFilter ? (
-          <div className="widget-card__filter">
-            <span className="widget-card__filter-text">Show: </span>
+          <div className={styles["widget-card__filter"]}>
+            <span className={styles["widget-card__filter-text"]}>Show: </span>
 
-            <select name="" id="" className="widget-card__filter-select">
+            <select name="" id="" className={styles["widget-card__filter-select"]}>
               {props.widgetContent.filterOptions.map((option) => (
                 <option
                   value={option.value}
-                  className="widget-card__filter-option"
+                  className={styles["widget-card__filter-option"]}
                 >
                   {option.text}
                 </option>
@@ -38,8 +38,8 @@ const WidgetCard = (props) => {
           </div>
         ) : null}
 
-        <div className="widget-card__divider" />
-        <div className="widget-card__content">{props.children}</div>
+        <div className={styles["widget-card__divider"]} />
+        <div className={styles["widget-card__content"]}>{props.children}</div>
       </div>
     </Fragment>
   );
