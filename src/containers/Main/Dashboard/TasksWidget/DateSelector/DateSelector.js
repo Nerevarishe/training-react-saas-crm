@@ -1,7 +1,6 @@
 import React, { Fragment, useState } from "react";
-// import PropTypes, { string } from "prop-types";
 import moment from "moment";
-import "./DateSelector.scss";
+import styles from"./DateSelector.module.scss";
 import WeekItem from "./WeekItem";
 
 const DateSelector = (props) => {
@@ -30,11 +29,11 @@ const DateSelector = (props) => {
 
   return (
     <Fragment>
-      <span className="tasks-widget__selected-date-text">
+      <span className={styles["tasks-widget__selected-date-text"]}>
         {currentDate.format("MMM Do YY")}
       </span>
-      <div className="tasks-widget__week-days">
-        <ul className="tasks-widget__week-list">
+      <div className={styles["tasks-widget__week-days"]}>
+        <ul className={styles["tasks-widget__week-list"]}>
           {week.map((day) => (
             <WeekItem
               key={day}
@@ -45,7 +44,7 @@ const DateSelector = (props) => {
           ))}
         </ul>
       </div>
-      <div className="tasks-widget__divider" />
+      <div className={styles["tasks-widget__divider"]} />
     </Fragment>
   );
 };
