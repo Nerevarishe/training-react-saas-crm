@@ -1,5 +1,5 @@
 import React from "react";
-import "./SideBar.scss";
+import style from "./SideBar.module.scss";
 import chatActiveImg from "./img/svg/chat-active.svg";
 import chatImg from "./img/svg/chat.svg";
 import contactsActiveImg from "./img/svg/contacts-active.svg";
@@ -89,12 +89,12 @@ const sideBarItems = [
 
 const SideBar = () => {
   return (
-    <nav className="header__sidebar">
-      <div className="header__title">
-        <span className="header__title-text">SaaS Kit</span>
+    <nav className={style["header__sidebar"]}>
+      <div className={style["header__title"]}>
+        <span className={style["header__title-text"]}>SaaS Kit</span>
       </div>
 
-      <div className="header__divider" />
+      <div className={style["header__divider"]} />
 
       <ProfileUser
         avatar={profile.avatar}
@@ -102,35 +102,19 @@ const SideBar = () => {
         email={profile.email}
       />
 
-      {/*<div className="header__user">*/}
-      {/*  <div className="header__avatar-block">*/}
-      {/*    <img*/}
-      {/*      src="./assets/img/profile_photo.png"*/}
-      {/*      alt="Profile Photo"*/}
-      {/*      className="header__avatar-img"*/}
-      {/*    />*/}
-      {/*  </div>*/}
-
-      {/*  <div className="header__user-info">*/}
-      {/*    <span className="header__username-text">Sierra Ferguson</span>*/}
-
-      {/*    <span className="header__email-text">s.ferguson@gmail.com</span>*/}
-      {/*  </div>*/}
-      {/*</div>*/}
-
-      <ul className="header__sidebar-menu">
+      <ul className={style["header__sidebar-menu"]}>
         {sideBarItems.map((item) => (
           <SideBarItem key={item.text} data={item} />
         ))}
       </ul>
 
-      <div className="header__toggle">
+      <div className={style["header__toggle"]}>
         <img
           src={toggleImg}
           alt="Toggle Sidebar"
-          className="header__toggle-icon"
+          className={style["header__toggle-icon"]}
         />
-        <span className="header__toggle-text">Toggle sidebar</span>
+        <span className={style["header__toggle-text"]}>Toggle sidebar</span>
       </div>
     </nav>
   );

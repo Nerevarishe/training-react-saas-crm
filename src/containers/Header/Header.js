@@ -1,11 +1,11 @@
 import React from "react";
-import "./Header.scss";
+import styles from "./Header.module.scss";
 import GlobalSearch from "./GlobalSearch";
 import SideBar from "./SideBar";
 
 const Header = () => {
   return (
-    <header className="header">
+    <header className={styles["header"]}>
       <GlobalSearch />
       <SideBar />
     </header>
