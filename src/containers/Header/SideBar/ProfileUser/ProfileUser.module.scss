@@ -1,18 +1,15 @@
 @import "../../../../scss/_imports.scss";
 
 .view-user {
-  &__person {
-    display: flex;
-    margin-bottom: 40px;
-  }
+  margin-bottom: 40px;
 
-  &__person-avatar {
+  &__avatar {
     max-width: 46px;
     max-height: 46px;
     border-radius: 50%;
   }
 
-  &__user-info {
+  &__info {
     display: flex;
     flex-direction: column;
     margin-left: 16px;

@@ -1,13 +1,13 @@
 @import "../../scss/imports";
 
 .view-user {
-  &__person {
+  display: flex;
+  &__avatar {
+    border-radius: 50%;
+    vertical-align: middle;
   }
 
-  &__person-avatar {
-  }
-
-  &__user-info {
+  &__info {
   }
 
   &__user-name {

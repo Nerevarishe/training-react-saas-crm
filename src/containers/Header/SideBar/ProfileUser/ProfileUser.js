@@ -5,12 +5,7 @@ import styles from "./ProfileUser.module.scss";
 
 const ProfileUser = (props) => {
   return (
-    <ViewUser
-      avatar={props.avatar}
-      email={props.email}
-      name={props.name}
-      styles={styles}
-    />
+    <ViewUser avatar={props.avatar} email={props.email} name={props.name} />
   );
 };
 
