@@ -9,7 +9,7 @@ import styles from "./WidgetCard.module.scss";
 
 const WidgetCard = (props) => {
   return (
-   <div style={styleWidgetCard} className={styles["widget-card"]}>
+    <div style={props.styleWidgetCard} className={styles["widget-card"]}>
       {props.showTitle ? (
         props.customTitle ? (
           props.customTitle
@@ -54,12 +54,12 @@ WidgetCard.propTypes = {
   showFilter: PropTypes.bool,
   widgetContent: PropTypes.object,
   styleWidgetCard: PropTypes.object,
-  styleWidgetCardFilterSelect: PropsTypes.object
+  styleWidgetCardFilterSelect: PropTypes.object,
 };
 
 WidgetCard.defaultProps = {
   styleWidgetCard: null,
-  styleWidgetCardFilterSelect: null
-}
+  styleWidgetCardFilterSelect: null,
+};
 
 export default WidgetCard;

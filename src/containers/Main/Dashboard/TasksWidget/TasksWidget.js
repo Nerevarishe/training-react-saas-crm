@@ -5,6 +5,31 @@ import ProgressBar from "./ProgressBar";
 import DateSelector from "./DateSelector";
 import TaskCard from "../../../../components/TaskCard";
 
+const styleWidgetCard = {
+  width: "645px",
+};
+
+const styleWidgetCardFilterSelect = {
+  width: "110px",
+};
+
+const widgetContent = {
+  filterOptions: [
+    {
+      text: "Previous Week",
+      value: "prevWeek",
+    },
+    {
+      text: "This Week",
+      value: "thisWeek",
+    },
+    {
+      text: "Next Week",
+      value: "nextWeek",
+    },
+  ],
+};
+
 const tasksData = [
   {
     taskId: "1",
@@ -41,23 +66,6 @@ const tasksData = [
   },
 ];
 
-const widgetContent = {
-  filterOptions: [
-    {
-      text: "Previous Week",
-      value: "prevWeek",
-    },
-    {
-      text: "This Week",
-      value: "thisWeek",
-    },
-    {
-      text: "Next Week",
-      value: "nextWeek",
-    },
-  ],
-};
-
 const customTitle = (
   <span className={styles["tasks-widget__completed-text"]}>
     8 task completed out of 10
@@ -71,21 +79,22 @@ const TasksWidget = () => {
       showTitle
       customTitle={customTitle}
       showFilter
-      // styles={styles}
+      styleWidgetCard={styleWidgetCard}
+      styleWidgetCardFilterSelect={styleWidgetCardFilterSelect}
     >
       {/*TODO: Connect to tasks backend*/}
       <ProgressBar max={10} value={8} />
 
       <DateSelector />
 
-      {
-        tasksData.map(taskCard => (
-          <TaskCard key={taskCard.taskId} data={taskCard} />
-        ))
-      }
+      {tasksData.map((taskCard) => (
+        <TaskCard key={taskCard.taskId} data={taskCard} />
+      ))}
 
       <div className={styles["main__tasks-show-more"]}>
-        <button className={styles["main__tasks-show-more-btn"]}>Show more</button>
+        <button className={styles["main__tasks-show-more-btn"]}>
+          Show more
+        </button>
       </div>
     </WidgetCard>
   );
