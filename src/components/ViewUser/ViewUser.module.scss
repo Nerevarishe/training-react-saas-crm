@@ -2,20 +2,17 @@
 
 .view-user {
   &__person {
-    display: flex;
+  }
+
+  &__person-avatar {
   }
 
   &__user-info {
   }
 
-  &__person-avatar {
-    border-radius: 50%;
-    vertical-align: middle;
+  &__user-name {
   }
 
-  &__person-name {
-  }
-
-  &__person-email {
+  &__user-email {
   }
 }

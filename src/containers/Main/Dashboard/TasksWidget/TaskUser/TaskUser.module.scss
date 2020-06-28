@@ -2,10 +2,16 @@
 
 .view-user {
 
+  &__person {
+    display: flex;
+  }
+
   &__person-avatar {
     max-width: 24px;
     max-height: 24px;
     margin-right: 12px;
+    border-radius: 50%;
+    vertical-align: middle;
   }
 
   &__person-name {

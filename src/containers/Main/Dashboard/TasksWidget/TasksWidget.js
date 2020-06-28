@@ -71,6 +71,7 @@ const TasksWidget = () => {
       showTitle
       customTitle={customTitle}
       showFilter
+      // styles={styles}
     >
       {/*TODO: Connect to tasks backend*/}
       <ProgressBar max={10} value={8} />

@@ -2,7 +2,14 @@
 
 .view-user {
   &__person {
+    display: flex;
     margin-bottom: 40px;
+  }
+
+  &__person-avatar {
+    max-width: 46px;
+    max-height: 46px;
+    border-radius: 50%;
   }
 
   &__user-info {
@@ -11,40 +18,13 @@
     margin-left: 16px;
   }
 
-  &__person-avatar {
-    max-width: 46px;
-    max-height: 46px;
-  }
-
-  &__person-name {
+  &__user-name {
     @include medium-14-font;
     color: $black-color;
   }
 
-  &__person-email {
+  &__user-email {
     @include medium-11-font;
     color: $gray-color;
   }
 }
-
-
-//&__user {
-//  display: flex;
-//  margin-bottom: 40px;
-//}
-//
-//&__user-info {
-//  display: flex;
-//  flex-direction: column;
-//  margin-left: 16px;
-//}
-//
-//&__username-text {
-//  @include medium-14-font;
-//  color: $black-color;
-//}
-//
-//&__email-text {
-//  @include medium-11-font;
-//  color: $gray-color;
-//}

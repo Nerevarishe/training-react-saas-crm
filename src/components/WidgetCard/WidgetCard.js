@@ -1,15 +1,25 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
-import styles from "./WidgetCard.module.scss";
+import stylesOriginal from "./WidgetCard.module.scss";
 
 // const widgetContent = {
 //   title: "Title",
 //   filterOptions: ["option one", "option two", "option three", "option four"],
 // };
 
+let styles = stylesOriginal;
+
 const WidgetCard = (props) => {
+  const checkStyles = (props) => {
+    if (props) {
+      styles = props;
+      console.dir(styles);
+    }
+  };
+
   return (
     <Fragment>
+      {checkStyles(props.styles)}
       <div className={styles["widget-card"]}>
         {props.showTitle ? (
           props.customTitle ? (
@@ -25,7 +35,11 @@ const WidgetCard = (props) => {
           <div className={styles["widget-card__filter"]}>
             <span className={styles["widget-card__filter-text"]}>Show: </span>
 
-            <select name="" id="" className={styles["widget-card__filter-select"]}>
+            <select
+              name=""
+              id=""
+              className={styles["widget-card__filter-select"]}
+            >
               {props.widgetContent.filterOptions.map((option) => (
                 <option
                   value={option.value}
