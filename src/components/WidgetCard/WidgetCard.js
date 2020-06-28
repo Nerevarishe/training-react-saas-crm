@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styles from "./WidgetCard.module.scss";
+import { Medium15Font, Regular12Font } from "../Fonts/Fonts";
 
 // const widgetContent = {
 //   title: "Title",
@@ -14,16 +15,16 @@ const WidgetCard = (props) => {
         props.customTitle ? (
           props.customTitle
         ) : (
-          <span className={styles["widget-card__title-text"]}>
-            {props.widgetContent.title}
-          </span>
+          //<span className={styles["widget-card__title-text"]}>
+          //  {props.widgetContent.title}
+          //</span>
+          <Medium15Font>{props.widgetContent.title}</Medium15Font>
         )
       ) : null}
 
       {props.showFilter ? (
         <div className={styles["widget-card__filter"]}>
-          <span className={styles["widget-card__filter-text"]}>Show: </span>
-
+          <Regular12Font color={"#6a707e"}>Show: </Regular12Font>
           <select
             style={props.styleWidgetCardFilterSelect}
             name=""
