@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styles from "./WidgetCard.module.scss";
+import styled from "styled-components";
+import arrowDown from "./img/svg/select-arrow-down.svg";
 import { Medium15Font, Regular12Font } from "../Fonts/Fonts";
 
 // const widgetContent = {
@@ -8,44 +9,96 @@ import { Medium15Font, Regular12Font } from "../Fonts/Fonts";
 //   filterOptions: ["option one", "option two", "option three", "option four"],
 // };
 
+const StyledWidgetCard = styled.div`
+  position: relative;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  padding: 16px 24px;
+  background: ${(props) => props.theme.colors.whiteColor}};
+  border-radius: 4px;
+`;
+
+const Filter = styled.div`
+  position: absolute;
+  right: 24px;
+  top: 17px;
+`;
+
+const Select = styled.select`
+  min-width: 90px;
+  border: none;
+  appearance: none;
+  background: url(${arrowDown} no-repeat right center;
+  background-size: 7px 4px;
+  font-family: Poppins, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: 0.01em;
+  font-size: 12px;
+  line-height: 18px;
+  color: ${(props) => props.theme.colors.accentBlueColor}
+  cursor: pointer;
+
+  &:focus {
+    outline-style: none;
+  }
+
+  option {
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 0.01em;
+    font-size: 12px;
+    line-height: 18px;
+    color: ${(props) => props.theme.colors.accentBlueColor}
+    cursor: pointer;
+  }
+
+
+`;
+
+const Divider = styled.div`
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 54px;
+  height: 1px;
+  background: ${(props) => props.theme.colors.dividerColor};
+`;
+
+const Content = styled.div`
+  padding-top: 33px;
+`;
+
 const WidgetCard = (props) => {
   return (
-    <div style={props.styleWidgetCard} className={styles["widget-card"]}>
+    <StyledWidgetCard style={props.styleWidgetCard}>
       {props.showTitle ? (
         props.customTitle ? (
           props.customTitle
         ) : (
-          //<span className={styles["widget-card__title-text"]}>
-          //  {props.widgetContent.title}
-          //</span>
-          <Medium15Font>{props.widgetContent.title}</Medium15Font>
+          <Medium15Font color={(props) => props.theme.colors.balckColor}>
+            {props.widgetContent.title}
+          </Medium15Font>
         )
       ) : null}
 
       {props.showFilter ? (
-        <div className={styles["widget-card__filter"]}>
-          <Regular12Font color={"#6a707e"}>Show: </Regular12Font>
-          <select
-            style={props.styleWidgetCardFilterSelect}
-            name=""
-            id=""
-            className={styles["widget-card__filter-select"]}
-          >
+        <Filter>
+          <Regular12Font color={(props) => props.theme.colors.grayBlueColor}>
+            Show:{" "}
+          </Regular12Font>
+
+          <Select style={props.styleWidgetCardFilterSelect}>
             {props.widgetContent.filterOptions.map((option) => (
-              <option
-                value={option.value}
-                className={styles["widget-card__filter-option"]}
-              >
-                {option.text}
-              </option>
+              <option value={option.value}>{option.text}</option>
             ))}
-          </select>
-        </div>
+          </Select>
+        </Filter>
       ) : null}
 
-      <div className={styles["widget-card__divider"]} />
-      <div className={styles["widget-card__content"]}>{props.children}</div>
-    </div>
+      <Divider />
+      <Content>{props.children}</Content>
+    </StyledWidgetCard>
   );
 };
 

@@ -1,13 +1,14 @@
-import React, { Fragment } from "react";
+import React from "react";
 import Header from "./containers/Header";
 import Main from "./containers/Main";
+import Theme from "./components/Theme/Theme";
 
 function App() {
   return (
-    <Fragment>
+    <Theme>
       <Header />
       <Main />
-    </Fragment>
+    </Theme>
   );
 }
 
