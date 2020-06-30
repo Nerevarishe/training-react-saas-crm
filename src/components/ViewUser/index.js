@@ -10,13 +10,13 @@ const ViewUser = (props) => {
   return (
     <ViewUserStyled>
       <Avatar as={props.styleAvatar} src={props.avatar} alt={props.name} />
-      <UserInfo styles={props.styleUserInfo}>
-        <UserName as={props.styleUserNameText} color={props.styleUserNameColor}>
+      <UserInfo as={props.styleUserInfo}>
+        <UserName as={props.styleUserNameFont} color={props.styleUserNameColor}>
           {props.name}
         </UserName>
         {props.email ? (
           <UserEmail
-            as={props.styleUserEmailText}
+            as={props.styleUserEmailFont}
             color={props.styleUserEmailColor}
           >
             {props.email}
@@ -29,10 +29,10 @@ const ViewUser = (props) => {
 
 ViewUser.propTypes = {
   styleAvatar: PropTypes.object.isRequired,
-  styleUserInfo: PropTypes.object.isRequired,
-  styleUserNameText: PropTypes.object.isRequired,
+  styleUserInfo: PropTypes.object,
+  styleUserNameFont: PropTypes.object.isRequired,
   styleUserNameColor: PropTypes.func.isRequired,
-  styleUserEmailText: PropTypes.object,
+  styleUserEmailFont: PropTypes.object,
   styleUserEmailColor: PropTypes.func,
   avatar: PropTypes.string,
   name: PropTypes.string.isRequired,

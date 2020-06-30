@@ -8,9 +8,9 @@ const TaskUser = (props) => (
     avatar={props.avatar}
     name={props.name}
     styleAvatar={StyleAvatar}
-    styleUserNameText={Regular13Font}
+    styleUserNameFont={Regular13Font}
     styleUserNameColor={(props) => props.theme.colors.tableGrayColor}
-    styleUserEmailText={Regular13Font}
+    styleUserEmailFont={Regular13Font}
     styleUserEmailColor={(props) => props.theme.colors.tableGrayColor}
   />
 );
