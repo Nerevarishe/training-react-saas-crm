@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { SideBarDivider } from "./SideBarDivider";
-import {SideBarItemStyled} from "./SideBarItemStyled";
-import {SideBarLink} from "./SideBarLink";
-import {Medium13Font} from "../../../../components/Fonts/Fonts";
-import {SideBarLinkIcon} from "./SideBarLinkIcon";
+import { SideBarItemStyled } from "./SideBarItemStyled";
+import { SideBarLink } from "./SideBarLink";
+import { Medium13Font } from "../../../../components/Fonts/Fonts";
+import { SideBarLinkIcon } from "./SideBarLinkIcon";
 
 const SideBarItem = (props) => {
   const [isHovered, setIsHovered] = useState(false);

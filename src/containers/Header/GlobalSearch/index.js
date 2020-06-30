@@ -9,13 +9,10 @@ import { GlobalSearchNotificationDot } from "./GlobalSearchNotificationDot";
 const GlobalSearch = () => {
   return (
     <GlobalSearchStyled>
-      <GlobalSearchInput
-        type="text"
-        placeholder="Global search"
-      />
+      <GlobalSearchInput type="text" placeholder="Global search" />
       <GlobalSearchNotification>
         <img src={notificationBell} alt="Notification" />
-        <GlobalSearchNotificationDot src={notificationDot} alt="" show/>
+        <GlobalSearchNotificationDot src={notificationDot} alt="" show />
       </GlobalSearchNotification>
     </GlobalSearchStyled>
   );
