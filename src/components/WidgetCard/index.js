@@ -1,12 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Medium15Font, Regular12Font } from "../Fonts/Fonts";
-import {StyledWidgetCard} from "./StyledWidgetCard";
-import {Filter} from "./Filter";
-import {Select} from "./Select";
-import {Divider} from "./Divider";
-import {Content} from "./Content";
-
+import { StyledWidgetCard } from "./StyledWidgetCard";
+import { Filter } from "./Filter";
+import { Select } from "./Select";
+import { Divider } from "./Divider";
+import { Content } from "./Content";
 
 // const widgetContent = {
 //   title: "Title",
@@ -40,13 +39,20 @@ const WidgetCard = (props) => {
         </Filter>
       ) : null}
 
-      <Divider />
-      <Content>{props.children}</Content>
+      <Divider topPosition={props.dividerTopPosition} />
+      <Content
+        style={{
+          paddingTop: "16px",
+        }}
+      >
+        {props.children}
+      </Content>
     </StyledWidgetCard>
   );
 };
 
 WidgetCard.propTypes = {
+  dividerTopPosition: PropTypes.string,
   showTitle: PropTypes.bool,
   customTitle: PropTypes.element,
   showFilter: PropTypes.bool,

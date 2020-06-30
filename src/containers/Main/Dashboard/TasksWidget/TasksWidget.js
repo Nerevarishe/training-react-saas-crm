@@ -1,12 +1,12 @@
 import React from "react";
 import WidgetCard from "../../../../components/WidgetCard";
-import styles from "./TasksWidget.module.scss";
 import ProgressBar from "./ProgressBar";
 import DateSelector from "./DateSelector";
 import TaskCard from "../../../../components/TaskCard";
+import { Medium13Font } from "../../../../components/Fonts/Fonts";
 
 const styleWidgetCard = {
-  width: "645px",
+  width: "635px",
 };
 
 const styleWidgetCardFilterSelect = {
@@ -58,7 +58,7 @@ const tasksData = [
     taskType: "Event",
     task: "Office meet-up",
     dueDate: "26.06.2020",
-    taskStatus: "Completed",
+    taskStatus: "Active",
     person: {
       avatar: "https://api.adorable.io/avatars/40/32rfewrsvdsc.png",
       name: "Lindsey Stroud",
@@ -67,14 +67,15 @@ const tasksData = [
 ];
 
 const customTitle = (
-  <span className={styles["tasks-widget__completed-text"]}>
+  <Medium13Font color={(props) => props.theme.colors.darkBlueColor}>
     8 task completed out of 10
-  </span>
+  </Medium13Font>
 );
 
 const TasksWidget = () => {
   return (
     <WidgetCard
+      dividerTopPosition={"218px"}
       widgetContent={widgetContent}
       showTitle
       customTitle={customTitle}
@@ -91,11 +92,11 @@ const TasksWidget = () => {
         <TaskCard key={taskCard.taskId} data={taskCard} />
       ))}
 
-      <div className={styles["main__tasks-show-more"]}>
-        <button className={styles["main__tasks-show-more-btn"]}>
-          Show more
-        </button>
-      </div>
+      {/*<div className={styles["main__tasks-show-more"]}>*/}
+      {/*  <button className={styles["main__tasks-show-more-btn"]}>*/}
+      {/*    Show more*/}
+      {/*  </button>*/}
+      {/*</div>*/}
     </WidgetCard>
   );
 };
