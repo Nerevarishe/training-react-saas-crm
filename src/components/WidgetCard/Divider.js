@@ -6,7 +6,7 @@ const Divider = styled.div`
   left: 0;
   right: 0;
   top: 54px;
-  top: ${(props) => props.topPosition || '54px'};
+  top: ${(props) => props.topPosition || "54px"};
   height: 1px;
   background: ${(props) => props.theme.colors.dividerColor};
 `;

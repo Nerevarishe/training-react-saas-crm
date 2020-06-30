@@ -1,7 +1,7 @@
 import React from "react";
 import ViewUser from "../../../../../components/ViewUser";
 import { Regular13Font } from "../../../../../components/Fonts/Fonts";
-import {StyleAvatar} from "./StyleAvatar";
+import { StyleAvatar } from "./StyleAvatar";
 
 const TaskUser = (props) => (
   <ViewUser

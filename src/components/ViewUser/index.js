@@ -11,14 +11,16 @@ const ViewUser = (props) => {
     <ViewUserStyled>
       <Avatar style={props.styleAvatar} src={props.avatar} alt={props.name} />
       <UserInfo styles={props.styleUserInfo}>
-        <UserName
-          as={props.styleUserNameText}
-          color={props.styleUserNameColor}
-        >
+        <UserName as={props.styleUserNameText} color={props.styleUserNameColor}>
           {props.name}
         </UserName>
         {props.email ? (
-          <UserEmail as={props.styleUserEmailText} color={props.styleUserEmailColor}>{props.email}</UserEmail>
+          <UserEmail
+            as={props.styleUserEmailText}
+            color={props.styleUserEmailColor}
+          >
+            {props.email}
+          </UserEmail>
         ) : null}
       </UserInfo>
     </ViewUserStyled>

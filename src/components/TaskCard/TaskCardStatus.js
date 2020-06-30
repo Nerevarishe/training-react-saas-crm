@@ -37,7 +37,9 @@ const TaskCardStyled = styled.div`
       ? completed
       : props.status === "Active"
       ? active
-      : props.status === "Ended" ? ended : 'display: none'};
+      : props.status === "Ended"
+      ? ended
+      : "display: none"};
 `;
 
 const TaskCardStatus = (props) => {

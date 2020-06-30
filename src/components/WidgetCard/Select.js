@@ -6,7 +6,7 @@ export const Select = styled.select`
   border: none;
   appearance: none;
   background: url(${arrowDown}) no-repeat right center;
-  background-size: 7px 4px; 
+  background-size: 7px 4px;
   font-family: Poppins, sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -18,5 +18,5 @@ export const Select = styled.select`
 
   &:focus {
     outline-style: none;
-  } 
+  }
 `;
