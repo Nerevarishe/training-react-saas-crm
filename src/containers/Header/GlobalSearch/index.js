@@ -1,29 +1,22 @@
 import React from "react";
-import styles from "./GlobalSearch.module.scss";
 import notificationBell from "./img/svg/notification-bell.svg";
 import notificationDot from "./img/svg/notification-red-dot.svg";
 import { GlobalSearchStyled } from "./GlobalSearchStyled";
+import { GlobalSearchInput } from "./GlobaSearchInput";
+import { GlobalSearchNotification } from "./GlobalSearchNotification";
+import { GlobalSearchNotificationDot } from "./GlobalSearchNotificationDot";
 
 const GlobalSearch = () => {
   return (
     <GlobalSearchStyled>
-      <input
+      <GlobalSearchInput
         type="text"
-        className={styles["header__search-field"]}
         placeholder="Global search"
       />
-      <div className={styles["header__notification"]}>
-        <img
-          src={notificationBell}
-          alt="Notification"
-          className={styles["header__notification-bell"]}
-        />
-        <img
-          src={notificationDot}
-          alt=""
-          className={`${styles["header__notification-dot"]} ${styles["header__notification-dot_show"]}`}
-        />
-      </div>
+      <GlobalSearchNotification>
+        <img src={notificationBell} alt="Notification" />
+        <GlobalSearchNotificationDot src={notificationDot} alt="" show/>
+      </GlobalSearchNotification>
     </GlobalSearchStyled>
   );
 };
