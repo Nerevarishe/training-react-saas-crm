@@ -1,18 +1,7 @@
 @import "../../scss/imports";
 
 .main {
-  display: flex;
-  padding: 96px 38px 36px 292px;
 
-  &__tasks {
-    position: relative;
-    min-width: 635px;
-    margin-right: 30px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-    border-radius: 4px;
-    padding: 16px 24px 14px 24px;
-    background: $white-color;
-  }
 
   &__deals {
     position: relative;
