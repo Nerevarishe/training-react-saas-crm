@@ -1,15 +1,6 @@
-@import "../../../scss/vars";
-@import "../../../scss/fonts";
+@import "../../../scss/imports";
 
 .header {
-  &__global-search {
-    position: fixed;
-    left: 256px;
-    width: calc(100vw - 256px);
-    padding: 20px 36px;
-    background: $white-color;
-  }
-
   &__search-field {
     width: 500px;
     height: 20px;

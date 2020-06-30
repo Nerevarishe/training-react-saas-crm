@@ -9,7 +9,7 @@ import { UserEmail } from "./UserEmail";
 const ViewUser = (props) => {
   return (
     <ViewUserStyled>
-      <Avatar style={props.styleAvatar} src={props.avatar} alt={props.name} />
+      <Avatar as={props.styleAvatar} src={props.avatar} alt={props.name} />
       <UserInfo styles={props.styleUserInfo}>
         <UserName as={props.styleUserNameText} color={props.styleUserNameColor}>
           {props.name}
@@ -30,9 +30,10 @@ const ViewUser = (props) => {
 ViewUser.propTypes = {
   styleAvatar: PropTypes.object.isRequired,
   styleUserInfo: PropTypes.object.isRequired,
-  styleUserNameText: PropTypes.element.isRequired,
-  styleUserNameColor: PropTypes.element.isRequired,
+  styleUserNameText: PropTypes.object.isRequired,
+  styleUserNameColor: PropTypes.func.isRequired,
   styleUserEmailText: PropTypes.object,
+  styleUserEmailColor: PropTypes.func,
   avatar: PropTypes.string,
   name: PropTypes.string.isRequired,
   email: PropTypes.string,
