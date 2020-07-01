@@ -16,7 +16,6 @@ import settingsImg from "./img/svg/settings.svg";
 import toggleImg from "./img/svg/toggle.svg";
 import SideBarItem from "./SideBarItem";
 import ProfileUser from "./ProfileUser";
-import {SideBarStyled, SideBarStyledWrapped} from "./SideBarStyled";
 import { SideBarTitle } from "./SideBarTitle";
 import { SideBarTitleText } from "./SideBarTitleText";
 import { HeaderDivider } from "./HeaderDivider";
@@ -24,6 +23,7 @@ import { SideBarMenu } from "./SideBarMenu";
 import { SideBarToggle } from "./SideBarToggle";
 import { Medium11Font } from "../../../components/Fonts/Fonts";
 import { SideBarToggleIcon } from "./SideBarToggleIcon";
+import SideBarStyled from "./SideBarStyled";
 
 const profile = {
   avatar: "https://api.adorable.io/avatars/100/Sierra_Ferguson.png",
@@ -96,7 +96,7 @@ const sideBarItems = [
 
 const SideBar = () => {
   return (
-    <SideBarStyledWrapped>
+    <SideBarStyled>
       <SideBarTitle>
         <SideBarTitleText>SaaS Kit</SideBarTitleText>
       </SideBarTitle>
@@ -121,7 +121,7 @@ const SideBar = () => {
           Toggle sidebar
         </Medium11Font>
       </SideBarToggle>
-    </SideBarStyledWrapped>
+    </SideBarStyled>
   );
 };
 
