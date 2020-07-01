@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import chatActiveImg from "./img/svg/chat-active.svg";
 import chatImg from "./img/svg/chat.svg";
 import contactsActiveImg from "./img/svg/contacts-active.svg";
@@ -14,6 +14,7 @@ import tasksImg from "./img/svg/tasks.svg";
 import settingsActiveImg from "./img/svg/settings-active.svg";
 import settingsImg from "./img/svg/settings.svg";
 import toggleImg from "./img/svg/toggle.svg";
+import toggleImgActive from "./img/svg/toggle-active.svg";
 import SideBarItem from "./SideBarItem";
 import ProfileUser from "./ProfileUser";
 import { SideBarTitle } from "./SideBarTitle";
@@ -24,6 +25,7 @@ import { SideBarToggle } from "./SideBarToggle";
 import { Medium11Font } from "../../../components/Fonts/Fonts";
 import { SideBarToggleIcon } from "./SideBarToggleIcon";
 import SideBarStyled from "./SideBarStyled";
+import { Context } from "../../../store";
 
 const profile = {
   avatar: "https://api.adorable.io/avatars/100/Sierra_Ferguson.png",
@@ -95,10 +97,16 @@ const sideBarItems = [
 ];
 
 const SideBar = () => {
+  const [state, dispatch] = useContext(Context);
+
   return (
     <SideBarStyled>
       <SideBarTitle>
-        <SideBarTitleText>SaaS Kit</SideBarTitleText>
+        <SideBarTitleText>SaaS</SideBarTitleText>
+        <SideBarTitleText show={state.appState.isSideBarPulledOut}>
+          {" "}
+          Kit
+        </SideBarTitleText>
       </SideBarTitle>
 
       <HeaderDivider />
@@ -116,8 +124,14 @@ const SideBar = () => {
       </SideBarMenu>
 
       <SideBarToggle>
-        <SideBarToggleIcon src={toggleImg} alt="Toggle Sidebar" />
-        <Medium11Font color={(props) => props.theme.colors.grayColor}>
+        <SideBarToggleIcon
+          src={state.appState.isSideBarPulledOut ? toggleImg : toggleImgActive}
+          alt="Toggle Sidebar"
+        />
+        <Medium11Font
+          color={(props) => props.theme.colors.grayColor}
+          show={state.appState.isSideBarPulledOut}
+        >
           Toggle sidebar
         </Medium11Font>
       </SideBarToggle>

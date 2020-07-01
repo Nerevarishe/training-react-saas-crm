@@ -5,8 +5,6 @@ const SideBarStyled = styled.nav`
   width: ${(props) => (props.state.isSideBarPulledOut ? "256px" : "68px")};
   height: 100vh;
   position: fixed;
-  margin: 0;
-  padding: 17px 24px 22px 24px;
   padding: ${(props) =>
     props.state.isSideBarPulledOut
       ? "17px 24px 22px 24px"

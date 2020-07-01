@@ -7,8 +7,8 @@ const initialState = {
   },
   auth: {
     isLoggedIn: true,
-    username: "TEST",
-    email: "TEST",
+    username: "Sierra Ferguson",
+    email: "s.ferguson@gmail.com",
   },
 };
 

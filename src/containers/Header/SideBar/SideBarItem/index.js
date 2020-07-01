@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { SideBarDivider } from "./SideBarDivider";
 import { SideBarItemStyled } from "./SideBarItemStyled";
 import { SideBarLink } from "./SideBarLink";
 import { Medium13Font } from "../../../../components/Fonts/Fonts";
 import { SideBarLinkIcon } from "./SideBarLinkIcon";
+import { Context } from "../../../../store";
 
 const SideBarItem = (props) => {
+  const [state, dispatch] = useContext(Context);
   const [isHovered, setIsHovered] = useState(false);
 
   return props.data.divider ? (
@@ -27,7 +29,7 @@ const SideBarItem = (props) => {
           }
           alt={props.data.image.alt}
         />
-        <Medium13Font>{props.data.text}</Medium13Font>
+        <Medium13Font show={state.appState.isSideBarPulledOut}>{props.data.text}</Medium13Font>
       </SideBarLink>
     </SideBarItemStyled>
   );

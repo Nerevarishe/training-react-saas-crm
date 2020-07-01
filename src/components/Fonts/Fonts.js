@@ -1,14 +1,26 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
-export const BaseFont = styled.span`
+const BaseFont = styled.span`
+  display: ${(props) => (props.show ? "initial" : "none")};
   font-family: Poppins, sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: 0.01em;
-  color: ${(props) => props.color || "inherit"};
+  color: ${(props) => props.color};
 `;
 
-export const BaseMediumFont = styled(BaseFont)`
+BaseFont.propTypes = {
+  color: PropTypes.string,
+  show: PropTypes.bool,
+};
+
+BaseFont.defaultProps = {
+  color: "inherit",
+  show: true,
+};
+
+const BaseMediumFont = styled(BaseFont)`
   font-weight: 500;
 `;
 
