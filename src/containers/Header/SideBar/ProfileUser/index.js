@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import ViewUser from "../../../../components/ViewUser";
 import { ProfileUserAvatar } from "./ProfileUserAvatar";
 import { Medium11Font, Medium14Font } from "../../../../components/Fonts/Fonts";
-import { ProfileUserInfo } from "./ProfileUserInfo";
+import ProfileUserInfo from "./ProfileUserInfo";
 
 const ProfileUser = (props) => {
   return (

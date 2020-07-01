@@ -3,7 +3,7 @@ import { SideBarDivider } from "./SideBarDivider";
 import { SideBarItemStyled } from "./SideBarItemStyled";
 import { SideBarLink } from "./SideBarLink";
 import { Medium13Font } from "../../../../components/Fonts/Fonts";
-import { SideBarLinkIcon } from "./SideBarLinkIcon";
+import SideBarLinkIcon from "./SideBarLinkIcon";
 import { Context } from "../../../../store";
 
 const SideBarItem = (props) => {
@@ -29,7 +29,9 @@ const SideBarItem = (props) => {
           }
           alt={props.data.image.alt}
         />
-        <Medium13Font show={state.appState.isSideBarPulledOut}>{props.data.text}</Medium13Font>
+        <Medium13Font show={state.appState.isSideBarPulledOut}>
+          {props.data.text}
+        </Medium13Font>
       </SideBarLink>
     </SideBarItemStyled>
   );

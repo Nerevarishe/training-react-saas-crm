@@ -3,7 +3,7 @@ import Reducer from "./reducer";
 
 const initialState = {
   appState: {
-    isSideBarPulledOut: false,
+    isSideBarPulledOut: true,
   },
   auth: {
     isLoggedIn: true,
