@@ -91,12 +91,6 @@ const TasksWidget = () => {
       {tasksData.map((taskCard) => (
         <TaskCard key={taskCard.taskId} data={taskCard} />
       ))}
-
-      {/*<div className={styles["main__tasks-show-more"]}>*/}
-      {/*  <button className={styles["main__tasks-show-more-btn"]}>*/}
-      {/*    Show more*/}
-      {/*  </button>*/}
-      {/*</div>*/}
     </WidgetCard>
   );
 };

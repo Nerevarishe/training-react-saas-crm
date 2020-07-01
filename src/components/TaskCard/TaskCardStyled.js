@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { TaskCardEditBlock } from "./TaskCardEditBlock";
 
 export const TaskCardStyled = styled.div`
   position: relative;
@@ -10,5 +11,8 @@ export const TaskCardStyled = styled.div`
 
   &:hover {
     box-shadow: 0 0 16px rgba(0, 0, 0, 0.14);
+    ${TaskCardEditBlock} {
+      display: flex;
+    }
   }
 `;
