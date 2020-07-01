@@ -16,7 +16,7 @@ import settingsImg from "./img/svg/settings.svg";
 import toggleImg from "./img/svg/toggle.svg";
 import SideBarItem from "./SideBarItem";
 import ProfileUser from "./ProfileUser";
-import { SideBarStyled } from "./SideBarStyled";
+import {SideBarStyled, SideBarStyledWrapped} from "./SideBarStyled";
 import { SideBarTitle } from "./SideBarTitle";
 import { SideBarTitleText } from "./SideBarTitleText";
 import { HeaderDivider } from "./HeaderDivider";
@@ -96,7 +96,7 @@ const sideBarItems = [
 
 const SideBar = () => {
   return (
-    <SideBarStyled>
+    <SideBarStyledWrapped>
       <SideBarTitle>
         <SideBarTitleText>SaaS Kit</SideBarTitleText>
       </SideBarTitle>
@@ -121,7 +121,7 @@ const SideBar = () => {
           Toggle sidebar
         </Medium11Font>
       </SideBarToggle>
-    </SideBarStyled>
+    </SideBarStyledWrapped>
   );
 };
 
