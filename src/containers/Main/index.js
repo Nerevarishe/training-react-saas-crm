@@ -1,6 +1,6 @@
 import React from "react";
 import Dashboard from "./Dashboard";
-import { MainStyled } from "./MainStyled";
+import MainStyled from "./MainStyled";
 
 const Main = () => {
   return (

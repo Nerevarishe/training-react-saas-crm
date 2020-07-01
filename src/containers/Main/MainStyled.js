@@ -1,6 +1,10 @@
 import styled from "styled-components";
+import { withContext } from "../../hoc/withContext";
 
-export const MainStyled = styled.main`
+const MainStyled = styled.main`
   display: flex;
-  padding: 96px 38px 36px 292px;
+  padding: 96px 38px 36px
+    ${(props) => (props.state.isSideBarPulledOut ? "292px" : "104px")};
 `;
+
+export default withContext(MainStyled);
