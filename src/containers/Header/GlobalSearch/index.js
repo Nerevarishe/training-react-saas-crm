@@ -1,7 +1,7 @@
 import React from "react";
 import notificationBell from "./img/svg/notification-bell.svg";
 import notificationDot from "./img/svg/notification-red-dot.svg";
-import { GlobalSearchStyled } from "./GlobalSearchStyled";
+import GlobalSearchStyled from "./GlobalSearchStyled";
 import { GlobalSearchInput } from "./GlobaSearchInput";
 import { GlobalSearchNotification } from "./GlobalSearchNotification";
 import { GlobalSearchNotificationDot } from "./GlobalSearchNotificationDot";
