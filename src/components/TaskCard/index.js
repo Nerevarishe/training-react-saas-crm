@@ -5,7 +5,7 @@ import Ellipse1 from "./img/svg/Ellipse-1.svg";
 import EditImg from "./img/svg/edit.svg";
 import DeleteImg from "./img/svg/delete.svg";
 import TaskUser from "../../containers/Main/Dashboard/TasksWidget/TaskUser";
-import { Medium12Font, Regular13Font } from "../Fonts/Fonts";
+import {Medium12Font, Medium15Font, Regular13Font} from "../Fonts/Fonts";
 import { TaskCardStatus } from "./TaskCardStatus";
 import { TaskCardStyled } from "./TaskCardStyled";
 import { TaskCardType } from "./TaskCardType";
@@ -23,7 +23,7 @@ const TaskCard = (props) => {
         </Medium12Font>
       </TaskCardType>
 
-      <TaskCardTaskText>{props.data.task}</TaskCardTaskText>
+      <TaskCardTaskText as={Medium15Font}>{props.data.task}</TaskCardTaskText>
 
       <TaskCardDueDate>
         <Regular13Font
