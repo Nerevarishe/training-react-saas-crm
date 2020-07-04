@@ -23,7 +23,7 @@ import { HeaderDivider } from "./HeaderDivider";
 import { SideBarMenu } from "./SideBarMenu";
 import { SideBarToggle } from "./SideBarToggle";
 import { Medium11Font } from "../../../components/Fonts/Fonts";
-import { SideBarToggleIcon } from "./SideBarToggleIcon";
+import SideBarToggleIcon from "./SideBarToggleIcon";
 import SideBarStyled from "./SideBarStyled";
 import { Context } from "../../../store";
 import { TOGGLE_SIDEBAR } from "../../../reducer";

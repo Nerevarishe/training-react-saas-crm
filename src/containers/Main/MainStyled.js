@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { withContext } from "../../hoc/withContext";
+import withContext from "../../hoc/withContext";
 
 const MainStyled = styled.main`
   display: flex;

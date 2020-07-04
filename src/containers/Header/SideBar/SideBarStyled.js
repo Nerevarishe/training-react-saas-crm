@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { withContext } from "../../../hoc/withContext";
+import withContext from "../../../hoc/withContext";
 
 const SideBarStyled = styled.nav`
   width: ${(props) => (props.state.isSideBarPulledOut ? "256px" : "68px")};

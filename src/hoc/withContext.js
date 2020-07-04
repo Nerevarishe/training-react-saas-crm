@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../store";
 
-export const withContext = (WrappedObject) => {
+const withContext = (WrappedObject) => {
   return (props) => {
     const [state, dispatch] = useContext(Context);
     return (
@@ -11,3 +11,5 @@ export const withContext = (WrappedObject) => {
     );
   };
 };
+
+export default withContext;
