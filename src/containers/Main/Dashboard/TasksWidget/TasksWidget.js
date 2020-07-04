@@ -3,7 +3,11 @@ import WidgetCard from "../../../../components/WidgetCard";
 import ProgressBar from "./ProgressBar";
 import DateSelector from "./DateSelector";
 import TaskCard from "../../../../components/TaskCard";
-import { Medium13Font } from "../../../../components/Fonts/Fonts";
+import {
+  Medium13Font,
+  Semibold13Font,
+} from "../../../../components/Fonts/Fonts";
+import TertiaryButton from "../../../../components/buttons/TertiaryButton/TertiaryButton";
 
 const styleWidgetCard = {
   width: "635px",
@@ -91,6 +95,12 @@ const TasksWidget = () => {
       {tasksData.map((taskCard) => (
         <TaskCard key={taskCard.taskId} data={taskCard} />
       ))}
+
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <TertiaryButton>
+          <Semibold13Font>Show More</Semibold13Font>
+        </TertiaryButton>
+      </div>
     </WidgetCard>
   );
 };
