@@ -40,13 +40,7 @@ const WidgetCard = (props) => {
       ) : null}
 
       <Divider topPosition={props.dividerTopPosition} />
-      <Content
-        style={{
-          paddingTop: "16px",
-        }}
-      >
-        {props.children}
-      </Content>
+      <Content style={props.styleContentPaddingTop}>{props.children}</Content>
     </StyledWidgetCard>
   );
 };
@@ -59,11 +53,13 @@ WidgetCard.propTypes = {
   widgetContent: PropTypes.object,
   styleWidgetCard: PropTypes.object,
   styleWidgetCardFilterSelect: PropTypes.object,
+  styleContentPaddingTop: PropTypes.object,
 };
 
 WidgetCard.defaultProps = {
   styleWidgetCard: null,
   styleWidgetCardFilterSelect: null,
+  styleContentPaddingTop: { paddingTop: "33px" },
 };
 
 export default WidgetCard;

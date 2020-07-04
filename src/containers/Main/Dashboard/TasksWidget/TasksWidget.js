@@ -86,6 +86,7 @@ const TasksWidget = () => {
       showFilter
       styleWidgetCard={styleWidgetCard}
       styleWidgetCardFilterSelect={styleWidgetCardFilterSelect}
+      styleContentPaddingTop={{ paddingTop: "16px", }}
     >
       {/*TODO: Connect to tasks backend*/}
       <ProgressBar max={10} value={8} />
