@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Chart from "chart.js";
 
-const TasksChartGenerator = () => {
+const TasksChartGenerator = (props) => {
   useEffect(() => {
     const ctx = document.getElementById("tasksChartGenerator");
     // eslint-disable-next-line no-unused-vars

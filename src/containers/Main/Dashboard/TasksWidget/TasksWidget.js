@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import WidgetCard from "../../../../components/WidgetCard";
 import ProgressBar from "./ProgressBar";
 import DateSelector from "./DateSelector";
@@ -86,7 +86,7 @@ const TasksWidget = () => {
       showFilter
       styleWidgetCard={styleWidgetCard}
       styleWidgetCardFilterSelect={styleWidgetCardFilterSelect}
-      styleContentPaddingTop={{ paddingTop: "16px", }}
+      styleContentPaddingTop={{ paddingTop: "16px" }}
     >
       {/*TODO: Connect to tasks backend*/}
       <ProgressBar max={10} value={8} />
