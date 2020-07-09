@@ -7,7 +7,7 @@ import {
   Medium13Font,
   Semibold13Font,
 } from "../../../../components/Fonts/Fonts";
-import TertiaryButton from "../../../../components/buttons/TertiaryButton/TertiaryButton";
+import TertiaryButton from "../../../../components/buttons/TertiaryButton";
 
 const styleWidgetCard = {
   width: "635px",

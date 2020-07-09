@@ -76,7 +76,7 @@ const TasksChartGenerator = (props) => {
           color: "#2ED47A",
         }}
       >
-        {state !== null ? state["tasks_stat"]["completed_tasks"] : null}{"%"}
+        {state !== null ? state["tasks_stat"]["completed_tasks"]+"%" : null}
       </span>
     </div>
   );

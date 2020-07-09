@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Semibold13Font } from "../Fonts/Fonts";
 
 const BaseButton = styled.button`
   border: none;
