@@ -15,10 +15,6 @@ const widgetContent = {
 const TasksChartWidget = () => {
   const [taskStats, setTaskStats] = useState(null);
 
-  const readTaskStats = (state) => {
-    return state;
-  };
-
   useEffect(() => {
     const asyncCall = async () => {
       const response = await getTaskStats();

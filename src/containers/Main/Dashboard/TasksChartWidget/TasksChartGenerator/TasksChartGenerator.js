@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { withTheme } from "styled-components";
 import Chart from "chart.js";
 
 const TasksChartGenerator = (props) => {
@@ -10,17 +11,6 @@ const TasksChartGenerator = (props) => {
     const ctx = document.getElementById("tasksChartGenerator");
     // eslint-disable-next-line no-unused-vars
     const myChart = new Chart(ctx, {
-      defaults: {
-        global: {
-          elements: {
-            point: {
-              radius: "10",
-              backgroundColor: "rgba(255, 255, 255, 1)",
-              borderWidth: "5",
-            },
-          },
-        },
-      },
       type: "doughnut",
       data: {
         labels: ["Completed", "Active", "Ended"],
@@ -32,9 +22,9 @@ const TasksChartGenerator = (props) => {
               state !== null ? state["tasks_stat"]["ended_tasks"] : null,
             ],
             backgroundColor: [
-              "rgba(46, 212, 122, 1)",
-              "rgba(255, 187, 70, 1)",
-              "rgba(247, 104, 91, 1)",
+              `${props.theme.colors.greenColor}`,
+              `${props.theme.colors.yellowColor}`,
+              `${props.theme.colors.redColor}`,
             ],
             borderWidth: 0,
           },
@@ -53,7 +43,7 @@ const TasksChartGenerator = (props) => {
         },
       },
     });
-  });
+  }, [props.data, state]);
 
   return (
     <div style={{ position: "relative" }}>
@@ -73,13 +63,13 @@ const TasksChartGenerator = (props) => {
           fontSize: "56px",
           lineHeight: "84px",
           textAlign: "center",
-          color: "#2ED47A",
+          color: `${props.theme.colors.greenColor}`,
         }}
       >
-        {state !== null ? state["tasks_stat"]["completed_tasks"]+"%" : null}
+        {state !== null ? state["tasks_stat"]["completed_tasks"] + "%" : null}
       </span>
     </div>
   );
 };
 
-export default TasksChartGenerator;
+export default withTheme(TasksChartGenerator);
