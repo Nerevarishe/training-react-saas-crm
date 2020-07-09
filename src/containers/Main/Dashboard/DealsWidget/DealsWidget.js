@@ -8,7 +8,7 @@ const widgetContent = {
   filterOptions: [
     { text: "Yearly", value: "yearly" },
     { text: "Quarterly", value: "quarterly" },
-    { text: "Monthly", value: "monthly" },
+    { text: "Monthly", value: "monthly" , selected: true},
     { text: "Weekly", value: "weekly" },
   ],
 };

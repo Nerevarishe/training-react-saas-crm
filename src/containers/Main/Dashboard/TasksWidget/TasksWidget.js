@@ -26,6 +26,7 @@ const widgetContent = {
     {
       text: "This Week",
       value: "thisWeek",
+      selected: true,
     },
     {
       text: "Next Week",

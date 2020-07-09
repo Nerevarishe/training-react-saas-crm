@@ -7,7 +7,7 @@ const widgetContent = {
   title: "Tasks",
   filterOptions: [
     { text: "Previous Month", value: "prevMonth" },
-    { text: "This Month", value: "thisMonth" },
+    { text: "This Month", value: "thisMonth", selected: true },
     { text: "Next Month", value: "nextMonth" },
   ],
 };

@@ -33,7 +33,9 @@ const WidgetCard = (props) => {
 
           <Select style={props.styleWidgetCardFilterSelect}>
             {props.widgetContent.filterOptions.map((option) => (
-              <option value={option.value}>{option.text}</option>
+              <option value={option.value} selected={option.selected}>
+                {option.text}
+              </option>
             ))}
           </Select>
         </Filter>
@@ -54,12 +56,14 @@ WidgetCard.propTypes = {
   styleWidgetCard: PropTypes.object,
   styleWidgetCardFilterSelect: PropTypes.object,
   styleContentPaddingTop: PropTypes.object,
+  selected: PropTypes.bool,
 };
 
 WidgetCard.defaultProps = {
   styleWidgetCard: null,
   styleWidgetCardFilterSelect: null,
   styleContentPaddingTop: { paddingTop: "33px" },
+  selected: false,
 };
 
 export default WidgetCard;
