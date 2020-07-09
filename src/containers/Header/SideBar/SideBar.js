@@ -101,11 +101,11 @@ const SideBar = () => {
   const [state, dispatch] = useContext(Context);
 
   const toggleSideBar = () => {
-    dispatch({type: TOGGLE_SIDEBAR});
+    dispatch({ type: TOGGLE_SIDEBAR });
   };
 
   return (
-    <SideBarStyled>
+    <SideBarStyled onMouseEnter={toggleSideBar} onMouseLeave={toggleSideBar}>
       <SideBarTitle>
         <SideBarTitleText>SaaS</SideBarTitleText>
         <SideBarTitleText show={state.appState.isSideBarPulledOut}>
@@ -129,7 +129,7 @@ const SideBar = () => {
       </SideBarMenu>
 
       <SideBarToggle
-        onClick={() => toggleSideBar()}
+      // onClick={toggleSideBar}
       >
         <SideBarToggleIcon
           src={state.appState.isSideBarPulledOut ? toggleImg : toggleImgActive}
