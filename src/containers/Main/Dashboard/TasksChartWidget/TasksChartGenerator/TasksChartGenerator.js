@@ -7,7 +7,6 @@ const TasksChartGenerator = (props) => {
 
   useEffect(() => {
     setState(props.data);
-    console.log(state);
     const ctx = document.getElementById("tasksChartGenerator");
     // eslint-disable-next-line no-unused-vars
     const myChart = new Chart(ctx, {
