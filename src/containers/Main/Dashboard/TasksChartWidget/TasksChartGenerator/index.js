@@ -1,8 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Chart from "chart.js";
 
 const TasksChartGenerator = (props) => {
+  const [state, setState] = useState(null);
+
   useEffect(() => {
+    setState(props.data);
+    console.log(state);
     const ctx = document.getElementById("tasksChartGenerator");
     // eslint-disable-next-line no-unused-vars
     const myChart = new Chart(ctx, {
@@ -22,15 +26,17 @@ const TasksChartGenerator = (props) => {
         labels: ["Completed", "Active", "Ended"],
         datasets: [
           {
-            label: "Closed deals",
-            data: [60, 30, 10],
+            data: [
+              state !== null ? state["tasks_stat"]["completed_tasks"] : null,
+              state !== null ? state["tasks_stat"]["active_tasks"] : null,
+              state !== null ? state["tasks_stat"]["ended_tasks"] : null,
+            ],
             backgroundColor: [
               "rgba(46, 212, 122, 1)",
               "rgba(255, 187, 70, 1)",
               "rgba(247, 104, 91, 1)",
             ],
             borderWidth: 0,
-            // borderAlign: "inner",
           },
         ],
       },
@@ -51,12 +57,16 @@ const TasksChartGenerator = (props) => {
 
   return (
     <div style={{ position: "relative" }}>
-      <canvas id="tasksChartGenerator" height="200px"/>
+      <canvas
+        style={{ position: "relative", zIndex: 1 }}
+        id="tasksChartGenerator"
+        height="200px"
+      />
       <span
         style={{
           position: "absolute",
-          top: "30%",
-          left: "26%",
+          top: "35%",
+          left: "28%",
           fontFamily: "Poppins",
           fontStyle: "normal",
           fontWeight: 500,
@@ -66,7 +76,7 @@ const TasksChartGenerator = (props) => {
           color: "#2ED47A",
         }}
       >
-        60%
+        {state !== null ? state["tasks_stat"]["completed_tasks"] : null}{"%"}
       </span>
     </div>
   );

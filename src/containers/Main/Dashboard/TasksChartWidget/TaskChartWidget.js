@@ -15,6 +15,10 @@ const widgetContent = {
 const TasksChartWidget = () => {
   const [taskStats, setTaskStats] = useState(null);
 
+  const readTaskStats = (state) => {
+    return state;
+  };
+
   useEffect(() => {
     const asyncCall = async () => {
       const response = await getTaskStats();
@@ -30,7 +34,9 @@ const TasksChartWidget = () => {
       showFilter
       styleWidgetCard={{ height: "100%" }}
     >
-      <TasksChartGenerator data={taskStats} />
+      <TasksChartGenerator
+        data={taskStats}
+      />
     </WidgetCard>
   );
 };
