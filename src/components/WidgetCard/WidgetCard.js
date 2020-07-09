@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Medium15Font, Regular12Font } from "../Fonts/Fonts";
 import { StyledWidgetCard } from "./StyledWidgetCard";
 import { Filter } from "./Filter";
-import { Select } from "./Select";
+import Select from "./Select";
 import { Divider } from "./Divider";
 import { Content } from "./Content";
 
@@ -13,6 +13,11 @@ import { Content } from "./Content";
 // };
 
 const WidgetCard = (props) => {
+  // const handleChange = (e) => {
+  //   console.log(e.target.value);
+  //   return e.target.value
+  // };
+
   return (
     <StyledWidgetCard style={props.styleWidgetCard}>
       {props.showTitle ? (
@@ -31,7 +36,10 @@ const WidgetCard = (props) => {
             Show:{" "}
           </Regular12Font>
 
-          <Select style={props.styleWidgetCardFilterSelect}>
+          <Select
+            style={props.styleWidgetCardFilterSelect}
+            onChange={(e) => props.filterValue(e.target.value)}
+          >
             {props.widgetContent.filterOptions.map((option) => (
               <option value={option.value} selected={option.selected}>
                 {option.text}

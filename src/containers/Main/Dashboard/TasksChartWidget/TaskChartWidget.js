@@ -14,25 +14,25 @@ const widgetContent = {
 
 const TasksChartWidget = () => {
   const [taskStats, setTaskStats] = useState(null);
+  const [filterValue, setFilterValue] = useState("thisMonth");
 
   useEffect(() => {
     const asyncCall = async () => {
-      const response = await getTaskStats();
+      const response = await getTaskStats(filterValue);
       setTaskStats(response.data);
     };
     asyncCall();
-  }, []);
+  }, [filterValue]);
 
   return (
     <WidgetCard
       widgetContent={widgetContent}
       showTitle
       showFilter
+      filterValue={setFilterValue}
       styleWidgetCard={{ height: "100%" }}
     >
-      <TasksChartGenerator
-        data={taskStats}
-      />
+      <TasksChartGenerator data={taskStats} />
     </WidgetCard>
   );
 };

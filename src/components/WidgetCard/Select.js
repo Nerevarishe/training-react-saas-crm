@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import arrowDown from "./img/svg/select-arrow-down.svg";
 
-export const Select = styled.select`
+const Select = styled.select`
   width: 110px;
   border: none;
   appearance: none;
@@ -20,3 +20,5 @@ export const Select = styled.select`
     outline-style: none;
   }
 `;
+
+export default Select;
