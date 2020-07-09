@@ -25,8 +25,8 @@ import { SideBarToggle } from "./SideBarToggle";
 import { Medium11Font } from "../../../components/Fonts/Fonts";
 import SideBarToggleIcon from "./SideBarToggleIcon";
 import SideBarStyled from "./SideBarStyled";
-import { Context } from "../../../store";
-import { TOGGLE_SIDEBAR } from "../../../reducer";
+import { Context } from "../../../globalStore/store";
+import { TOGGLE_SIDEBAR } from "../../../globalStore/reducer";
 
 const profile = {
   avatar: "https://api.adorable.io/avatars/100/Sierra_Ferguson.png",

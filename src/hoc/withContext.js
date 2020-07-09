@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Context } from "../store";
+import { Context } from "../globalStore/store";
 
 const withContext = (WrappedObject) => {
   return (props) => {

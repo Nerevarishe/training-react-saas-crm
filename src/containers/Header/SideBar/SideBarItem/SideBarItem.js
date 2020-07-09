@@ -4,7 +4,7 @@ import { SideBarItemStyled } from "./SideBarItemStyled";
 import { SideBarLink } from "./SideBarLink";
 import { Medium13Font } from "../../../../components/Fonts/Fonts";
 import SideBarLinkIcon from "./SideBarLinkIcon";
-import { Context } from "../../../../store";
+import { Context } from "../../../../globalStore/store";
 
 const SideBarItem = (props) => {
   const [state, dispatch] = useContext(Context);
