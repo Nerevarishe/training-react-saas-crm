@@ -36,6 +36,7 @@ const profile = {
 
 const sideBarItems = [
   {
+    id: 0,
     image: {
       alt: "Dashboard Icon",
       img: dashboardImg,
@@ -45,6 +46,7 @@ const sideBarItems = [
     isActive: true,
   },
   {
+    id: 1,
     image: {
       alt: "Tasks Icon",
       img: tasksImg,
@@ -53,6 +55,7 @@ const sideBarItems = [
     text: "Tasks",
   },
   {
+    id: 2,
     image: {
       alt: "Email Icon",
       img: emailImg,
@@ -61,6 +64,7 @@ const sideBarItems = [
     text: "Email",
   },
   {
+    id: 3,
     image: {
       alt: "Contacts Icon",
       img: contactsImg,
@@ -69,6 +73,7 @@ const sideBarItems = [
     text: "Contacts",
   },
   {
+    id: 4,
     image: {
       alt: "Chat Icon",
       img: chatImg,
@@ -77,6 +82,7 @@ const sideBarItems = [
     text: "Chat",
   },
   {
+    id: 5,
     image: {
       alt: "Deals Icon",
       img: dealsImg,
@@ -85,9 +91,11 @@ const sideBarItems = [
     text: "Deals",
   },
   {
+    id: 6,
     divider: true,
   },
   {
+    id: 7,
     image: {
       alt: "Settings Icon",
       img: settingsImg,
@@ -124,13 +132,11 @@ const SideBar = () => {
 
       <SideBarMenu>
         {sideBarItems.map((item) => (
-          <SideBarItem key={item.text} data={item} />
+          <SideBarItem key={item.id} data={item} />
         ))}
       </SideBarMenu>
 
-      <SideBarToggle
-      // onClick={toggleSideBar}
-      >
+      <SideBarToggle>
         <SideBarToggleIcon
           src={state.appState.isSideBarPulledOut ? toggleImg : toggleImgActive}
           alt="Toggle Sidebar"

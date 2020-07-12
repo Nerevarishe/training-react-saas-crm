@@ -21,15 +21,18 @@ const styleWidgetCardFilterSelect = {
 const widgetContent = {
   filterOptions: [
     {
+      id: 0,
       text: "Previous Week",
       value: "prevWeek",
     },
     {
+      id: 1,
       text: "This Week",
       value: "thisWeek",
       selected: true,
     },
     {
+      id: 2,
       text: "Next Week",
       value: "nextWeek",
     },

@@ -6,10 +6,10 @@ const widgetContent = {
   title: "Deals",
   // filterOptions: ["Yearly", "Quarterly", "Monthly", "Weekly"],
   filterOptions: [
-    { text: "Yearly", value: "yearly" },
-    { text: "Quarterly", value: "quarterly" },
-    { text: "Monthly", value: "monthly" , selected: true},
-    { text: "Weekly", value: "weekly" },
+    { id: 0, text: "Yearly", value: "yearly" },
+    { id: 1, text: "Quarterly", value: "quarterly" },
+    { id: 2, text: "Monthly", value: "monthly", selected: true },
+    { id: 3, text: "Weekly", value: "weekly" },
   ],
 };
 

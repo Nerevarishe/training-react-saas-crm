@@ -13,11 +13,6 @@ import { Content } from "./Content";
 // };
 
 const WidgetCard = (props) => {
-  // const handleChange = (e) => {
-  //   console.log(e.target.value);
-  //   return e.target.value
-  // };
-
   return (
     <StyledWidgetCard style={props.styleWidgetCard}>
       {props.showTitle ? (
@@ -39,9 +34,10 @@ const WidgetCard = (props) => {
           <Select
             style={props.styleWidgetCardFilterSelect}
             onChange={(e) => props.filterValue(e.target.value)}
+            defaultValue={props.filterValue}
           >
             {props.widgetContent.filterOptions.map((option) => (
-              <option value={option.value} selected={option.selected}>
+              <option key={option.id} value={option.value}>
                 {option.text}
               </option>
             ))}

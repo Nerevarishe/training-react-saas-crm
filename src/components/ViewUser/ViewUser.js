@@ -29,7 +29,7 @@ const ViewUser = (props) => {
 
 ViewUser.propTypes = {
   styleAvatar: PropTypes.object.isRequired,
-  styleUserInfo: PropTypes.object,
+  styleUserInfo: PropTypes.func,
   styleUserNameFont: PropTypes.object.isRequired,
   styleUserNameColor: PropTypes.func.isRequired,
   styleUserEmailFont: PropTypes.object,

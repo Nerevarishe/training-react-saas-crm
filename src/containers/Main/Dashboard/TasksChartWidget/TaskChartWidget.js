@@ -6,9 +6,9 @@ import { getTaskStats } from "./utils";
 const widgetContent = {
   title: "Tasks",
   filterOptions: [
-    { text: "Previous Month", value: "prevMonth" },
-    { text: "This Month", value: "thisMonth", selected: true },
-    { text: "Next Month", value: "nextMonth" },
+    { id: 0, text: "Previous Month", value: "prevMonth" },
+    { id: 1, text: "This Month", value: "thisMonth", selected: true },
+    { id: 2, text: "Next Month", value: "nextMonth" },
   ],
 };
 
