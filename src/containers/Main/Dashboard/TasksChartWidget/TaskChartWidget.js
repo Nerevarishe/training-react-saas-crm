@@ -32,6 +32,7 @@ const TasksChartWidget = () => {
       filterValue={setFilterValue}
       styleWidgetCard={{ height: "382px" }}
     >
+      {console.log("WidgetCard render")}
       <TasksChartGenerator data={taskStats} />
     </WidgetCard>
   );

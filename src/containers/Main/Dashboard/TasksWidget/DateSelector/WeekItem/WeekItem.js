@@ -20,6 +20,7 @@ const WeekItem = (props) => {
           {props.day === "Sun"
             ? props.firstWeekDate.format("DD")
             : moment(props.firstWeekDate.add(1, "d")).format("DD")}
+          {console.log("WeekItem renders!")}
         </Regular12Font>
       </WeekDate>
     </WeekItemStyled>
