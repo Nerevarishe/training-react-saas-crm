@@ -19,7 +19,7 @@ const DealsChartGenerator = () => {
       },
       type: "line",
       data: {
-        labels: ["1 Dec", "8 Dec", "16 Dec", "31 Dec"],
+        labels: ["2020-12-01", "2020-12-08", "2020-12-16", "2020-12-31"],
         datasets: [
           {
             label: "Closed deals",
