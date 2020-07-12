@@ -77,7 +77,11 @@ const TasksWidget = () => {
         : null}
 
       <div style={{ display: "flex", justifyContent: "center" }}>
-        <TertiaryButton onClick={() => {setTasksOnPage(tasksOnPage + 10)}}>
+        <TertiaryButton
+          onClick={() => {
+            setTasksOnPage(tasksOnPage + 10);
+          }}
+        >
           <Semibold13Font>Show More</Semibold13Font>
         </TertiaryButton>
       </div>

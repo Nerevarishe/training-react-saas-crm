@@ -30,7 +30,7 @@ const TasksChartWidget = () => {
       showTitle
       showFilter
       filterValue={setFilterValue}
-      styleWidgetCard={{ height: "100%" }}
+      styleWidgetCard={{ height: "382px" }}
     >
       <TasksChartGenerator data={taskStats} />
     </WidgetCard>
