@@ -17,11 +17,11 @@ const TasksChartWidget = () => {
   const [filterValue, setFilterValue] = useState("thisMonth");
 
   useEffect(() => {
-    const asyncCall = async () => {
+    const fetchData = async () => {
       const response = await getTaskStats(filterValue);
       setTaskStats(response.data);
     };
-    asyncCall();
+    fetchData();
   }, [filterValue]);
 
   return (
@@ -30,6 +30,7 @@ const TasksChartWidget = () => {
       showTitle
       showFilter
       filterValue={setFilterValue}
+      defaultValue="thisMonth"
       styleWidgetCard={{ height: "382px" }}
     >
       {console.log("WidgetCard render")}

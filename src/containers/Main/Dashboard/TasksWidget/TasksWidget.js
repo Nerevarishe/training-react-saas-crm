@@ -29,7 +29,6 @@ const widgetContent = {
       id: 1,
       text: "This Week",
       value: "thisWeek",
-      selected: true,
     },
     {
       id: 2,
@@ -48,14 +47,15 @@ const customTitle = (
 const TasksWidget = () => {
   const [tasksCards, setTasksCard] = useState([]);
   const [tasksOnPage, setTasksOnPage] = useState(3);
+  const [filterValue, setFilterValue] = useState("thisWeek");
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await getTasks(tasksOnPage);
+      const response = await getTasks(filterValue, tasksOnPage);
       setTasksCard(response.data);
     };
     fetchData();
-  }, [tasksOnPage]);
+  }, [filterValue, tasksOnPage]);
 
   return (
     <WidgetCard
@@ -64,6 +64,8 @@ const TasksWidget = () => {
       showTitle
       customTitle={customTitle}
       showFilter
+      filterValue={setFilterValue}
+      defaultValue="thisWeek"
       styleWidgetCard={styleWidgetCard}
       styleWidgetCardFilterSelect={styleWidgetCardFilterSelect}
       styleContentPaddingTop={{ paddingTop: "16px" }}
