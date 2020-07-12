@@ -75,7 +75,7 @@ const TasksWidget = () => {
       {/*TODO: Connect to tasks backend*/}
       <ProgressBar max={10} value={8} />
 
-      <DateSelector weekDays={weekDays}/>
+      <DateSelector weekDays={weekDays} />
 
       {tasksCards !== []
         ? tasksCards.map((taskCard) => (

@@ -17,7 +17,9 @@ const DateSelector = (props) => {
   );
   // 3. Get current date day
   // eslint-disable-next-line no-unused-vars
-  const [currentDateDay, setCurrentDateDay] = useState(parseInt(currentDate.format("DD")))
+  const [currentDateDay, setCurrentDateDay] = useState(
+    parseInt(currentDate.format("DD"))
+  );
 
   return (
     <DateSelectorStyled>

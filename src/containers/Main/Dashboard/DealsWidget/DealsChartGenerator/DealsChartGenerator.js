@@ -58,9 +58,7 @@ const DealsChartGenerator = () => {
     });
   });
 
-  return (
-    <canvas id="dealsChart" height="200px"/>
-  );
+  return <canvas id="dealsChart" height="200px" />;
 };
 
 export default DealsChartGenerator;
