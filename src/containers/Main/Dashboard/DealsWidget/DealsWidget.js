@@ -1,6 +1,6 @@
 import React from "react";
 import WidgetCard from "../../../../components/WidgetCard";
-import ChartGenerator from "./ChartGenerator";
+import DealsChartGenerator from "./DealsChartGenerator";
 
 const widgetContent = {
   title: "Deals",
@@ -22,7 +22,7 @@ const DealsWidget = () => {
       widgetContent={widgetContent}
       styleWidgetCardFilterSelect={{ width: "70px" }}
     >
-      <ChartGenerator />
+      <DealsChartGenerator />
     </WidgetCard>
   );
 };

@@ -1,14 +1,10 @@
 import React, { useEffect } from "react";
 import Chart from "chart.js";
 
-const chartWrapper = {
-  position: "relative",
-  height: "100%",
-};
-
-const ChartGenerator = () => {
+const DealsChartGenerator = () => {
   useEffect(() => {
-    const ctx = document.getElementById("myChart");
+    const ctx = document.getElementById("dealsChart");
+    // eslint-disable-next-line no-unused-vars
     const myChart = new Chart(ctx, {
       defaults: {
         global: {
@@ -63,8 +59,8 @@ const ChartGenerator = () => {
   });
 
   return (
-    <canvas id="myChart" height="200px"/>
+    <canvas id="dealsChart" height="200px"/>
   );
 };
 
-export default ChartGenerator;
+export default DealsChartGenerator;

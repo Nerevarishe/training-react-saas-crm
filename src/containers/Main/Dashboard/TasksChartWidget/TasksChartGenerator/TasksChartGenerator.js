@@ -42,7 +42,13 @@ const TasksChartGenerator = (props) => {
         },
       },
     });
-  }, [props.data, state]);
+  }, [
+    props.data,
+    props.theme.colors.greenColor,
+    props.theme.colors.redColor,
+    props.theme.colors.yellowColor,
+    state,
+  ]);
 
   return (
     <div style={{ position: "relative" }}>

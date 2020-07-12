@@ -14,6 +14,7 @@ import { TaskCardDueDate } from "./TaskCardDueDate";
 import { TaskCardEditBlock } from "./TaskCardEditBlock";
 import { TaskCardEditBlockItem } from "./TaskCardEditBlockItem";
 import { convertToDate } from "../../utils/timeConverter";
+import TaskCardEditBlockButton from "./TaskCardEditBlockButton";
 
 const TaskCard = (props) => {
   return (
@@ -49,17 +50,21 @@ const TaskCard = (props) => {
       />
       <TaskCardEditBlock>
         <TaskCardEditBlockItem>
-          <img src={Ellipse} alt="circle1" />
-          <img src={Ellipse1} alt="circle2" />
+          <TaskCardEditBlockButton>
+            <img src={Ellipse} alt="circle1" />
+          </TaskCardEditBlockButton>
+          <TaskCardEditBlockButton>
+            <img src={Ellipse1} alt="circle2" />
+          </TaskCardEditBlockButton>
         </TaskCardEditBlockItem>
 
         <TaskCardEditBlockItem>
-          <a href="#">
+          <TaskCardEditBlockButton>
             <img src={EditImg} alt="Edit Task" />
-          </a>
-          <a href="#">
+          </TaskCardEditBlockButton>
+          <TaskCardEditBlockButton>
             <img src={DeleteImg} alt="Delete Task" />
-          </a>
+          </TaskCardEditBlockButton>
         </TaskCardEditBlockItem>
       </TaskCardEditBlock>
       <TaskCardStatus status={props.data["task"]["task_status"]} />
