@@ -6,18 +6,9 @@ import { WeekDays } from "./WeekDays";
 import { WeekList } from "./WeekList";
 import { DateSelectorStyled } from "./DateSelectorStyled";
 
-const DateSelector = () => {
+const DateSelector = (props) => {
   // 0. List of week days
   // eslint-disable-next-line no-unused-vars
-  const [week, setWeek] = useState([
-    "Sun",
-    "Mon",
-    "Tue",
-    "Wed",
-    "Thu",
-    "Fri",
-    "Sat",
-  ]);
   // 1. Get current date;
   // eslint-disable-next-line no-unused-vars
   const [currentDate, setCurrentDate] = useState(moment());
@@ -25,14 +16,6 @@ const DateSelector = () => {
   // eslint-disable-next-line no-unused-vars
   const [currentWeekDay, setCurrentWeekDay] = useState(
     currentDate.format("ddd")
-  );
-  // 3. Get current week number
-  // eslint-disable-next-line no-unused-vars
-  const [currentWeek, setCurrentWeek] = useState(currentDate.week());
-  // 4. Get date of first week day
-  // eslint-disable-next-line no-unused-vars
-  const [firstWeekDate, setFirstWeekDate] = useState(
-    moment(moment().week(currentWeek)).day(0)
   );
 
   return (
@@ -49,14 +32,16 @@ const DateSelector = () => {
       </Medium15Font>
       <WeekDays>
         <WeekList>
-          {week.map((day) => (
-            <WeekItem
-              key={day}
-              day={day}
-              currentWeekDay={currentWeekDay}
-              firstWeekDate={firstWeekDate}
-            />
-          ))}
+          {props.weekDays !== null
+            ? props.weekDays.map((day) => (
+                <WeekItem
+                  key={day["week_day_name"]}
+                  weekDay={day["week_day_name"]}
+                  day={day["week_day_date"]}
+                  currentWeekDay={currentWeekDay}
+                />
+              ))
+            : null}
         </WeekList>
       </WeekDays>
     </DateSelectorStyled>

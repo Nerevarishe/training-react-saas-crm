@@ -11,16 +11,13 @@ import { WeekDate } from "./WeekDate";
 
 const WeekItem = (props) => {
   return (
-    <WeekItemStyled key={props.day}>
-      <WeekDay day={props.day} currentWeekDay={props.currentWeekDay}>
-        <Medium13Font>{props.day}</Medium13Font>
+    <WeekItemStyled>
+      <WeekDay day={props.weekDay} currentWeekDay={props.currentWeekDay}>
+        <Medium13Font>{props.weekDay}</Medium13Font>
       </WeekDay>
-      <WeekDate day={props.day} currentWeekDay={props.currentWeekDay}>
+      <WeekDate day={props.weekDay} currentWeekDay={props.currentWeekDay}>
         <Regular12Font>
-          {props.day === "Sun"
-            ? props.firstWeekDate.format("DD")
-            : moment(props.firstWeekDate.add(1, "d")).format("DD")}
-          {console.log("WeekItem renders!")}
+          {props.day}
         </Regular12Font>
       </WeekDate>
     </WeekItemStyled>
@@ -28,7 +25,7 @@ const WeekItem = (props) => {
 };
 
 WeekItem.propTypes = {
-  day: PropTypes.string,
+  day: PropTypes.number,
   currentWeekDay: PropTypes.string,
   firstWeekDate: PropTypes.object,
 };

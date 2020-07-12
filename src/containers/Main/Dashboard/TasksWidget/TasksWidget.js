@@ -46,13 +46,15 @@ const customTitle = (
 
 const TasksWidget = () => {
   const [tasksCards, setTasksCard] = useState([]);
+  const [weekDays, setWeekDays] = useState(null);
   const [tasksOnPage, setTasksOnPage] = useState(3);
   const [filterValue, setFilterValue] = useState("thisWeek");
 
   useEffect(() => {
     const fetchData = async () => {
       const response = await getTasks(filterValue, tasksOnPage);
-      setTasksCard(response.data);
+      setTasksCard(response.data["task_cards"]);
+      setWeekDays(response.data["week_days"]);
     };
     fetchData();
   }, [filterValue, tasksOnPage]);
@@ -73,7 +75,7 @@ const TasksWidget = () => {
       {/*TODO: Connect to tasks backend*/}
       <ProgressBar max={10} value={8} />
 
-      <DateSelector />
+      <DateSelector weekDays={weekDays}/>
 
       {tasksCards !== []
         ? tasksCards.map((taskCard) => (
