@@ -8,6 +8,7 @@ import {
   Semibold13Font,
 } from "../../../../components/Fonts/Fonts";
 import TertiaryButton from "../../../../components/buttons/TertiaryButton";
+import { getTasks } from "./utils";
 
 const styleWidgetCard = {
   width: "635px",
@@ -78,6 +79,17 @@ const customTitle = (
 );
 
 const TasksWidget = () => {
+  const [tasksCards, setTasksCard] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await getTasks();
+      setTasksCard(response.data)
+    };
+    fetchData();
+    console.log(tasksCards);
+  }, []);
+
   return (
     <WidgetCard
       dividerTopPosition={"218px"}
@@ -94,9 +106,15 @@ const TasksWidget = () => {
 
       <DateSelector />
 
-      {tasksData.map((taskCard) => (
-        <TaskCard key={taskCard.taskId} data={taskCard} />
-      ))}
+      {/*{tasksData.map((taskCard) => (*/}
+      {/*  <TaskCard key={taskCard.taskId} data={taskCard} />*/}
+      {/*))}*/}
+
+      {tasksCards !== []
+        ? tasksCards.map((taskCard) => (
+            <TaskCard key={taskCard["task"]["_id"]["$oid"]} data={taskCard} />
+          ))
+        : null}
 
       <div style={{ display: "flex", justifyContent: "center" }}>
         <TertiaryButton>
