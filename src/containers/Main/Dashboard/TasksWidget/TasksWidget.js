@@ -36,42 +36,6 @@ const widgetContent = {
   ],
 };
 
-const tasksData = [
-  {
-    taskId: "1",
-    taskType: "Reminder",
-    task: "Send benefit review by Sunday",
-    dueDate: "26.06.2020",
-    taskStatus: "Completed",
-    person: {
-      avatar: "https://api.adorable.io/avatars/40/32edac@rsfd.asd.png",
-      name: "George Fields",
-    },
-  },
-  {
-    taskId: "2",
-    taskType: "Call",
-    task: "Invite to office meet-up",
-    dueDate: "26.06.2020",
-    taskStatus: "Ended",
-    person: {
-      avatar: "https://api.adorable.io/avatars/40/32edac@rsfd.asd423qwdac.png",
-      name: "Rebecca Moore",
-    },
-  },
-  {
-    taskId: "3",
-    taskType: "Event",
-    task: "Office meet-up",
-    dueDate: "26.06.2020",
-    taskStatus: "Active",
-    person: {
-      avatar: "https://api.adorable.io/avatars/40/32rfewrsvdsc.png",
-      name: "Lindsey Stroud",
-    },
-  },
-];
-
 const customTitle = (
   <Medium13Font color={(props) => props.theme.colors.darkBlueColor}>
     8 task completed out of 10
@@ -80,15 +44,15 @@ const customTitle = (
 
 const TasksWidget = () => {
   const [tasksCards, setTasksCard] = useState([]);
+  const [tasksOnPage, setTasksOnPage] = useState(3);
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await getTasks();
-      setTasksCard(response.data)
+      const response = await getTasks(tasksOnPage);
+      setTasksCard(response.data);
     };
     fetchData();
-    console.log(tasksCards);
-  }, []);
+  }, [tasksOnPage]);
 
   return (
     <WidgetCard
@@ -106,10 +70,6 @@ const TasksWidget = () => {
 
       <DateSelector />
 
-      {/*{tasksData.map((taskCard) => (*/}
-      {/*  <TaskCard key={taskCard.taskId} data={taskCard} />*/}
-      {/*))}*/}
-
       {tasksCards !== []
         ? tasksCards.map((taskCard) => (
             <TaskCard key={taskCard["task"]["_id"]["$oid"]} data={taskCard} />
@@ -117,7 +77,7 @@ const TasksWidget = () => {
         : null}
 
       <div style={{ display: "flex", justifyContent: "center" }}>
-        <TertiaryButton>
+        <TertiaryButton onClick={() => {setTasksOnPage(tasksOnPage + 10)}}>
           <Semibold13Font>Show More</Semibold13Font>
         </TertiaryButton>
       </div>
