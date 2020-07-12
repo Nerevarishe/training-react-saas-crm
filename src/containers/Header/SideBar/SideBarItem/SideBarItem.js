@@ -7,6 +7,7 @@ import SideBarLinkIcon from "./SideBarLinkIcon";
 import { Context } from "../../../../globalStore/store";
 
 const SideBarItem = (props) => {
+  // eslint-disable-next-line no-unused-vars
   const [state, dispatch] = useContext(Context);
   const [isHovered, setIsHovered] = useState(false);
 

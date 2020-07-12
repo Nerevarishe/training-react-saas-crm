@@ -24,7 +24,9 @@ const TaskCard = (props) => {
         </Medium12Font>
       </TaskCardType>
 
-      <TaskCardTaskText as={Medium15Font}>{props.data["task"]["task_body"]}</TaskCardTaskText>
+      <TaskCardTaskText as={Medium15Font}>
+        {props.data["task"]["task_body"]}
+      </TaskCardTaskText>
 
       <TaskCardDueDate>
         <Regular13Font
@@ -41,7 +43,6 @@ const TaskCard = (props) => {
           {convertToDate(props.data["task"]["task_due_date"]["$date"])}
         </Regular13Font>
       </TaskCardDueDate>
-      {/*TODO: Style TaskUser component*/}
       <TaskUser
         avatar={props.data.user.avatar}
         name={props.data.user.username}
@@ -68,14 +69,24 @@ const TaskCard = (props) => {
 
 TaskCard.propTypes = {
   data: PropTypes.shape({
-    taskId: PropTypes.number.isRequired, // TODO: When completing backend, change to appropriate type!
-    taskType: PropTypes.oneOf(["Call", "Event", "Reminder"]), // TODO: Add functionality to hide in DOM when false
-    task: PropTypes.string.isRequired,
-    dueDate: PropTypes.string.isRequired, // TODO: When completing backend, change to appropriate type!
-    taskStatus: PropTypes.oneOf(["Active", "Completed", "Ended"]).isRequired,
-    person: PropTypes.shape({
-      avatar: PropTypes.string, // TODO: When completing backend, change to appropriate type!
-      name: PropTypes.string.isRequired,
+    task: PropTypes.shape({
+      _id: PropTypes.shape({
+        $oid: PropTypes.string,
+      }),
+      task_type: PropTypes.oneOf(["Call", "Event", "Reminder"]), // TODO: Add functionality to hide in DOM when false
+      task_body: PropTypes.string.isRequired,
+      task_due_date: PropTypes.shape({
+        $date: PropTypes.number.isRequired,
+      }),
+      task_status: PropTypes.oneOf(["Active", "Completed", "Ended"]).isRequired,
+    }),
+    user: PropTypes.shape({
+      _id: PropTypes.shape({
+        $oid: PropTypes.string.isRequired,
+      }),
+      avatar: PropTypes.string,
+      email: PropTypes.string,
+      username: PropTypes.string,
     }),
   }),
 };

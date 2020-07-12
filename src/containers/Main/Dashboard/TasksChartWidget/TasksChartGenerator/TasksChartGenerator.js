@@ -62,7 +62,7 @@ const TasksChartGenerator = (props) => {
           fontSize: "56px",
           lineHeight: "84px",
           textAlign: "center",
-          color: `${props.theme.colors.greenColor}`,
+          color: props.theme.colors.greenColor,
         }}
       >
         {state !== null ? state["tasks_stat"]["completed_tasks"] + "%" : null}
