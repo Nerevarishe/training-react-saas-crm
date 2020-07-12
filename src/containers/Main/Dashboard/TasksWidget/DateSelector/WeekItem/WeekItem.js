@@ -12,13 +12,21 @@ import { WeekDate } from "./WeekDate";
 const WeekItem = (props) => {
   return (
     <WeekItemStyled>
-      <WeekDay day={props.weekDay} currentWeekDay={props.currentWeekDay}>
+      <WeekDay
+        day={props.weekDay}
+        currentWeekDay={props.currentWeekDay}
+        currentDateDay={props.currentDateDay}
+        date={props.day}
+      >
         <Medium13Font>{props.weekDay}</Medium13Font>
       </WeekDay>
-      <WeekDate day={props.weekDay} currentWeekDay={props.currentWeekDay}>
-        <Regular12Font>
-          {props.day}
-        </Regular12Font>
+      <WeekDate
+        day={props.weekDay}
+        currentWeekDay={props.currentWeekDay}
+        currentDateDay={props.currentDateDay}
+        date={props.day}
+      >
+        <Regular12Font>{props.day}</Regular12Font>
       </WeekDate>
     </WeekItemStyled>
   );

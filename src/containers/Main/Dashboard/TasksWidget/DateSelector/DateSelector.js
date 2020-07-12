@@ -7,8 +7,6 @@ import { WeekList } from "./WeekList";
 import { DateSelectorStyled } from "./DateSelectorStyled";
 
 const DateSelector = (props) => {
-  // 0. List of week days
-  // eslint-disable-next-line no-unused-vars
   // 1. Get current date;
   // eslint-disable-next-line no-unused-vars
   const [currentDate, setCurrentDate] = useState(moment());
@@ -17,6 +15,9 @@ const DateSelector = (props) => {
   const [currentWeekDay, setCurrentWeekDay] = useState(
     currentDate.format("ddd")
   );
+  // 3. Get current date day
+  // eslint-disable-next-line no-unused-vars
+  const [currentDateDay, setCurrentDateDay] = useState(parseInt(currentDate.format("DD")))
 
   return (
     <DateSelectorStyled>
@@ -39,6 +40,7 @@ const DateSelector = (props) => {
                   weekDay={day["week_day_name"]}
                   day={day["week_day_date"]}
                   currentWeekDay={currentWeekDay}
+                  currentDateDay={currentDateDay}
                 />
               ))
             : null}

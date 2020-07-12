@@ -7,7 +7,8 @@ export const WeekDate = styled.button`
   text-align: center;
   background: none;
   color: ${(props) =>
-    props.day === props.currentWeekDay
+    props.day === props.currentWeekDay &&
+    props.currentDateDay === props.date
       ? props.theme.colors.accentBlueColor
       : props.theme.colors.darkGrayColor};
   cursor: pointer;
