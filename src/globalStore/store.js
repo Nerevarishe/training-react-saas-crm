@@ -5,6 +5,9 @@ const initialState = {
   appState: {
     isSideBarPulledOut: false,
   },
+  tasksWidget: {
+    tasksOnPage: 3,
+  },
   dateSelector: {
     selectedDate: null,
   },

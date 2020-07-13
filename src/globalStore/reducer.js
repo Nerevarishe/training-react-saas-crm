@@ -1,6 +1,8 @@
 export const TOGGLE_SIDEBAR = "TOGGLE_SIDEBAR";
 export const DATE_SELECTOR_SET_DAY = "DATE_SELECTOR_SET_CURRENT_DAY";
 export const DATE_SELECTOR_RESET = "DATE_SELECTOR_RESET";
+export const TASKS_WIDGET_SET_PER_PAGE = "TASKS_WIDGET_SET_PER_PAGE";
+export const TASKS_WIDGET_RESET = "TASKS_WIDGET_RESET";
 
 const Reducer = (state, action) => {
   switch (action.type) {
@@ -14,6 +16,25 @@ const Reducer = (state, action) => {
       };
 
     // Components:
+    // TasksWidget
+    case TASKS_WIDGET_SET_PER_PAGE:
+      return {
+        ...state,
+        tasksWidget: {
+          ...state.tasksWidget,
+          tasksOnPage: action.data,
+        },
+      };
+
+    case TASKS_WIDGET_RESET:
+      return {
+        ...state,
+        tasksWidget: {
+          ...state.tasksWidget,
+          tasksOnPage: 3,
+        },
+      };
+
     // DateSelector:
     case DATE_SELECTOR_SET_DAY:
       return {

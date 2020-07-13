@@ -5,7 +5,10 @@ import { WeekDay } from "./WeekDay";
 import { Medium13Font } from "../../../../../../components/Fonts/Fonts";
 import WeekDate from "./WeekDate";
 import { Context } from "../../../../../../globalStore/store";
-import { DATE_SELECTOR_SET_DAY } from "../../../../../../globalStore/reducer";
+import {
+  DATE_SELECTOR_SET_DAY,
+  TASKS_WIDGET_RESET,
+} from "../../../../../../globalStore/reducer";
 
 const WeekItem = (props) => {
   const [state, dispatch] = useContext(Context);
@@ -15,6 +18,7 @@ const WeekItem = (props) => {
       type: DATE_SELECTOR_SET_DAY,
       data: parseInt(e.target.firstChild.nodeValue),
     });
+    dispatch({ type: TASKS_WIDGET_RESET });
   };
 
   return (

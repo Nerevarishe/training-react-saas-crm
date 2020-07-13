@@ -7,7 +7,10 @@ import Select from "./Select";
 import { Divider } from "./Divider";
 import { Content } from "./Content";
 import { Context } from "../../globalStore/store";
-import { DATE_SELECTOR_RESET } from "../../globalStore/reducer";
+import {
+  DATE_SELECTOR_RESET,
+  TASKS_WIDGET_RESET,
+} from "../../globalStore/reducer";
 
 // const widgetContent = {
 //   title: "Title",
@@ -20,6 +23,7 @@ const WidgetCard = (props) => {
   const filterValueChangeHandler = (e) => {
     // TODO: Check how refactor dispatch part
     dispatch({ type: DATE_SELECTOR_RESET });
+    dispatch({ type: TASKS_WIDGET_RESET });
     return props.filterValue(e.target.value);
   };
 

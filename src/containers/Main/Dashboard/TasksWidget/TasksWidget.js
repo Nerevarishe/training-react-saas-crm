@@ -10,7 +10,10 @@ import {
 import TertiaryButton from "../../../../components/buttons/TertiaryButton";
 import { getTasks } from "./utils";
 import { Context } from "../../../../globalStore/store";
-import { DATE_SELECTOR_SET_DAY } from "../../../../globalStore/reducer";
+import {
+  DATE_SELECTOR_SET_DAY,
+  TASKS_WIDGET_SET_PER_PAGE,
+} from "../../../../globalStore/reducer";
 
 const styleWidgetCard = {
   width: "635px",
@@ -55,18 +58,29 @@ const TasksWidget = () => {
   // eslint-disable-next-line no-unused-vars
   const [state, dispatch] = useContext(Context);
 
+  const showMoreHandler = () => {
+    dispatch({
+      type: TASKS_WIDGET_SET_PER_PAGE,
+      data: state.tasksWidget.tasksOnPage + 10,
+    });
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       const response = await getTasks(
         filterValue,
         state.dateSelector.selectedDate,
-        tasksOnPage
+        state.tasksWidget.tasksOnPage
       );
       setTasksCard(response.data["task_cards"]);
       setWeekDays(response.data["week_days"]);
     };
     fetchData();
-  }, [filterValue, tasksOnPage, state.dateSelector.selectedDate]);
+  }, [
+    filterValue,
+    state.tasksWidget.tasksOnPage,
+    state.dateSelector.selectedDate,
+  ]);
 
   return (
     <WidgetCard
@@ -93,11 +107,7 @@ const TasksWidget = () => {
         : null}
 
       <div style={{ display: "flex", justifyContent: "center" }}>
-        <TertiaryButton
-          onClick={() => {
-            setTasksOnPage(tasksOnPage + 10);
-          }}
-        >
+        <TertiaryButton onClick={showMoreHandler}>
           <Semibold13Font>Show More</Semibold13Font>
         </TertiaryButton>
       </div>
