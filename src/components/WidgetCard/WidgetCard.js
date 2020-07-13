@@ -18,6 +18,7 @@ const WidgetCard = (props) => {
   const [state, dispatch] = useContext(Context);
 
   const filterValueChangeHandler = (e) => {
+    // TODO: Check how refactor dispatch part
     dispatch({ type: DATE_SELECTOR_RESET });
     return props.filterValue(e.target.value);
   };

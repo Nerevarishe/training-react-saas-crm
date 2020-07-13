@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { WeekItemStyled } from "./WeekItemStyled";
 import { WeekDay } from "./WeekDay";
 import { Medium13Font } from "../../../../../../components/Fonts/Fonts";
-import { WeekDate } from "./WeekDate";
+import WeekDate from "./WeekDate";
 import { Context } from "../../../../../../globalStore/store";
 import { DATE_SELECTOR_SET_DAY } from "../../../../../../globalStore/reducer";
 

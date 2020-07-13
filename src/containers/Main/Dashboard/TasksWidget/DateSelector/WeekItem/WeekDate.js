@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import { Regular12Font } from "../../../../../../components/Fonts/Fonts";
+import withContext from "../../../../../../hoc/withContext";
 
-export const WeekDate = styled(Regular12Font)`
+// TODO: Implement style from context data changed
+const WeekDate = styled(Regular12Font)`
   position: absolute;
   top: 28px;
   border: none;
@@ -15,7 +17,8 @@ export const WeekDate = styled(Regular12Font)`
   outline-style: none;
 
   &:hover,
-  &:focus {
+  &:focus,
+  &:active {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -26,3 +29,5 @@ export const WeekDate = styled(Regular12Font)`
     color: ${(props) => props.theme.colors.whiteColor};
   }
 `;
+
+export default withContext(WeekDate);
