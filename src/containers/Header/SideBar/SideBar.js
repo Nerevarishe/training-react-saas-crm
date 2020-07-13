@@ -29,7 +29,7 @@ import { Context } from "../../../globalStore/store";
 import { TOGGLE_SIDEBAR } from "../../../globalStore/reducer";
 
 const profile = {
-  avatar: "https://api.adorable.io/avatars/100/Sierra_Ferguson.png",
+  avatar: "https://robohash.org/aliquidaliquamnon.bmp?size=150x150&set=set1",
   name: "Sierra Ferguson",
   email: "s.ferguson@gmail.com",
 };
