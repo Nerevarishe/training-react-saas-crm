@@ -45,8 +45,8 @@ const TasksWidget = () => {
   const [weekDays, setWeekDays] = useState(null);
   const [filterValue, setFilterValue] = useState("thisWeek");
   const [disabled, setDisabled] = useState(false);
-  const [allTasks, setAllTasks] = useState(null);
-  const [completedTasks, setCompletedTasks] = useState(null);
+  const [allTasks, setAllTasks] = useState(0);
+  const [completedTasks, setCompletedTasks] = useState(0);
 
   // eslint-disable-next-line no-unused-vars
   const [state, dispatch] = useContext(Context);
