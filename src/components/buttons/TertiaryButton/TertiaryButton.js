@@ -5,16 +5,16 @@ const TertiaryButton = styled(BaseButton)`
   border-radius: unset;
   color: ${(props) => props.theme.colors.accentBlueColor};
 
-  &:hover,
-  &:focus {
+  :hover,
+  :focus {
     color: ${(props) => props.theme.colors.buttonHoverColor};
   }
 
-  &:active {
+  :active {
     color: ${(props) => props.theme.colors.buttonActiveColor};
   }
 
-  &:disabled {
+  :disabled {
     color: $ ${(props) => props.theme.colors.accentBlueColor};
     opacity: 0.4;
   }

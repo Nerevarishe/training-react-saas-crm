@@ -10,10 +10,7 @@ import {
 import TertiaryButton from "../../../../components/buttons/TertiaryButton";
 import { getTasks } from "./utils";
 import { Context } from "../../../../globalStore/store";
-import {
-  DATE_SELECTOR_SET_DAY,
-  TASKS_WIDGET_SET_PER_PAGE,
-} from "../../../../globalStore/reducer";
+import { TASKS_WIDGET_SET_PER_PAGE } from "../../../../globalStore/reducer";
 
 const styleWidgetCard = {
   width: "635px",
@@ -52,13 +49,14 @@ const customTitle = (
 const TasksWidget = () => {
   const [tasksCards, setTasksCard] = useState([]);
   const [weekDays, setWeekDays] = useState(null);
-  const [tasksOnPage, setTasksOnPage] = useState(3);
   const [filterValue, setFilterValue] = useState("thisWeek");
+  const [disabled, setDisabled] = useState(false);
 
   // eslint-disable-next-line no-unused-vars
   const [state, dispatch] = useContext(Context);
 
   const showMoreHandler = () => {
+    setDisabled(true);
     dispatch({
       type: TASKS_WIDGET_SET_PER_PAGE,
       data: state.tasksWidget.tasksOnPage + 10,
@@ -74,6 +72,7 @@ const TasksWidget = () => {
       );
       setTasksCard(response.data["task_cards"]);
       setWeekDays(response.data["week_days"]);
+      setDisabled(!response.data["has_next"]);
     };
     fetchData();
   }, [
@@ -107,7 +106,7 @@ const TasksWidget = () => {
         : null}
 
       <div style={{ display: "flex", justifyContent: "center" }}>
-        <TertiaryButton onClick={showMoreHandler}>
+        <TertiaryButton onClick={showMoreHandler} disabled={disabled}>
           <Semibold13Font>Show More</Semibold13Font>
         </TertiaryButton>
       </div>
