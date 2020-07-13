@@ -20,7 +20,6 @@ const DateSelector = (props) => {
   const [currentDateDay, setCurrentDateDay] = useState(
     parseInt(currentDate.format("DD"))
   );
-
   return (
     <DateSelectorStyled>
       {console.log("DateSelector renders")}

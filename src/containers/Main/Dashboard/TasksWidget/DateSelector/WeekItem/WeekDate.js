@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { Regular12Font } from "../../../../../../components/Fonts/Fonts";
 
-export const WeekDate = styled.button`
+export const WeekDate = styled(Regular12Font)`
   position: absolute;
   top: 28px;
   border: none;

@@ -1,4 +1,5 @@
 export const TOGGLE_SIDEBAR = "TOGGLE_SIDEBAR";
+export const DATE_SELECTOR_SET_DAY = "DATE_SELECTOR_SET_CURRENT_DAY";
 
 const Reducer = (state, action) => {
   switch (action.type) {
@@ -8,6 +9,17 @@ const Reducer = (state, action) => {
         ...state,
         appState: {
           isSideBarPulledOut: !state.appState.isSideBarPulledOut,
+        },
+      };
+
+    // Components:
+    // DateSelector:
+    case DATE_SELECTOR_SET_DAY:
+      return {
+        ...state,
+        dateSelector: {
+          ...state.dateSelector,
+          selectedDate: action.data,
         },
       };
 

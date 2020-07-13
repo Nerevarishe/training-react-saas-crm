@@ -5,6 +5,9 @@ const initialState = {
   appState: {
     isSideBarPulledOut: false,
   },
+  dateSelector: {
+    selectedDate: null,
+  },
   auth: {
     isLoggedIn: true,
     username: "Sierra Ferguson",

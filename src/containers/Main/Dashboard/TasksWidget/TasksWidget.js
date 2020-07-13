@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import WidgetCard from "../../../../components/WidgetCard";
 import ProgressBar from "./ProgressBar";
 import DateSelector from "./DateSelector";
@@ -9,6 +9,8 @@ import {
 } from "../../../../components/Fonts/Fonts";
 import TertiaryButton from "../../../../components/buttons/TertiaryButton";
 import { getTasks } from "./utils";
+import { Context } from "../../../../globalStore/store";
+import {DATE_SELECTOR_SET_DAY} from "../../../../globalStore/reducer";
 
 const styleWidgetCard = {
   width: "635px",
@@ -49,15 +51,26 @@ const TasksWidget = () => {
   const [weekDays, setWeekDays] = useState(null);
   const [tasksOnPage, setTasksOnPage] = useState(3);
   const [filterValue, setFilterValue] = useState("thisWeek");
+  const [render, setRender] = useState(0);
+
+  const [state, dispatch] = useContext(Context);
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await getTasks(filterValue, tasksOnPage);
+      const response = await getTasks(
+        filterValue,
+        state.dateSelector.selectedDate,
+        tasksOnPage
+      );
       setTasksCard(response.data["task_cards"]);
       setWeekDays(response.data["week_days"]);
+      setRender(render + 1);
     };
     fetchData();
-  }, [filterValue, tasksOnPage]);
+    // dispatch({type: DATE_SELECTOR_SET_DAY, data: null})
+  }, [filterValue, tasksOnPage, state.dateSelector.selectedDate]);
+
+  useEffect(() => {}, [render, tasksCards]);
 
   return (
     <WidgetCard
