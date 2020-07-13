@@ -1,5 +1,6 @@
 export const TOGGLE_SIDEBAR = "TOGGLE_SIDEBAR";
 export const DATE_SELECTOR_SET_DAY = "DATE_SELECTOR_SET_CURRENT_DAY";
+export const DATE_SELECTOR_RESET = "DATE_SELECTOR_RESET";
 
 const Reducer = (state, action) => {
   switch (action.type) {
@@ -20,6 +21,15 @@ const Reducer = (state, action) => {
         dateSelector: {
           ...state.dateSelector,
           selectedDate: action.data,
+        },
+      };
+
+    case DATE_SELECTOR_RESET:
+      return {
+        ...state,
+        dateSelector: {
+          ...state.dateSelector,
+          selectedDate: null,
         },
       };
 

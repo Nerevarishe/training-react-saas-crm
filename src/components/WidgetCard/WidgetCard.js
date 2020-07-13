@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import { Medium15Font, Regular12Font } from "../Fonts/Fonts";
 import { StyledWidgetCard } from "./StyledWidgetCard";
@@ -6,6 +6,8 @@ import { Filter } from "./Filter";
 import Select from "./Select";
 import { Divider } from "./Divider";
 import { Content } from "./Content";
+import { Context } from "../../globalStore/store";
+import { DATE_SELECTOR_RESET } from "../../globalStore/reducer";
 
 // const widgetContent = {
 //   title: "Title",
@@ -13,6 +15,13 @@ import { Content } from "./Content";
 // };
 
 const WidgetCard = (props) => {
+  const [state, dispatch] = useContext(Context);
+
+  const filterValueChangeHandler = (e) => {
+    dispatch({ type: DATE_SELECTOR_RESET });
+    return props.filterValue(e.target.value);
+  };
+
   return (
     <StyledWidgetCard style={props.styleWidgetCard}>
       {props.showTitle ? (
@@ -33,7 +42,7 @@ const WidgetCard = (props) => {
 
           <Select
             style={props.styleWidgetCardFilterSelect}
-            onChange={(e) => props.filterValue(e.target.value)}
+            onChange={(e) => filterValueChangeHandler(e)}
             defaultValue={props.defaultValue}
           >
             {props.widgetContent.filterOptions.map((option) => (
