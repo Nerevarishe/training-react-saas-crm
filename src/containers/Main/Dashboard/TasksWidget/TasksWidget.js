@@ -40,17 +40,13 @@ const widgetContent = {
   ],
 };
 
-const customTitle = (
-  <Medium13Font color={(props) => props.theme.colors.darkBlueColor}>
-    8 task completed out of 10
-  </Medium13Font>
-);
-
 const TasksWidget = () => {
   const [tasksCards, setTasksCard] = useState([]);
   const [weekDays, setWeekDays] = useState(null);
   const [filterValue, setFilterValue] = useState("thisWeek");
   const [disabled, setDisabled] = useState(false);
+  const [allTasks, setAllTasks] = useState(null);
+  const [completedTasks, setCompletedTasks] = useState(null);
 
   // eslint-disable-next-line no-unused-vars
   const [state, dispatch] = useContext(Context);
@@ -73,6 +69,8 @@ const TasksWidget = () => {
       setTasksCard(response.data["task_cards"]);
       setWeekDays(response.data["week_days"]);
       setDisabled(!response.data["has_next"]);
+      setAllTasks(response.data["tasks_in_period"]);
+      setCompletedTasks(response.data["completed_tasks"]);
     };
     fetchData();
   }, [
@@ -80,6 +78,12 @@ const TasksWidget = () => {
     state.tasksWidget.tasksOnPage,
     state.dateSelector.selectedDate,
   ]);
+
+  const customTitle = (
+    <Medium13Font color={(props) => props.theme.colors.darkBlueColor}>
+      {completedTasks} task completed out of {allTasks}
+    </Medium13Font>
+  );
 
   return (
     <WidgetCard
@@ -95,7 +99,7 @@ const TasksWidget = () => {
       styleContentPaddingTop={{ paddingTop: "16px" }}
     >
       {/*TODO: Connect to tasks backend*/}
-      <ProgressBar max={10} value={8} />
+      <ProgressBar max={allTasks} value={completedTasks} />
 
       <DateSelector weekDays={weekDays} />
 
