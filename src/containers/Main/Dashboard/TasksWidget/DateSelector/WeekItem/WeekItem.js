@@ -11,6 +11,7 @@ import {
 } from "../../../../../../globalStore/reducer";
 
 const WeekItem = (props) => {
+  // eslint-disable-next-line no-unused-vars
   const [state, dispatch] = useContext(Context);
 
   const selectDateHandler = (e) => {

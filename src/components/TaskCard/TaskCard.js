@@ -15,8 +15,19 @@ import { TaskCardEditBlock } from "./TaskCardEditBlock";
 import { TaskCardEditBlockItem } from "./TaskCardEditBlockItem";
 import { convertToDate } from "../../utils/timeConverter";
 import TaskCardEditBlockButton from "./TaskCardEditBlockButton";
+import { changeTaskStatus } from "./utils";
 
 const TaskCard = (props) => {
+  const completeHandler = () => {
+    changeTaskStatus(props.data.task._id.$oid, "Completed");
+  };
+
+  const activeHandler = () => {
+    changeTaskStatus(props.data.task._id.$oid, "Active");
+  };
+  // const editHandler;
+  // const deleteHandler
+
   return (
     <TaskCardStyled>
       <TaskCardType>
@@ -50,10 +61,10 @@ const TaskCard = (props) => {
       />
       <TaskCardEditBlock>
         <TaskCardEditBlockItem>
-          <TaskCardEditBlockButton>
+          <TaskCardEditBlockButton onClick={activeHandler}>
             <img src={Ellipse} alt="circle1" />
           </TaskCardEditBlockButton>
-          <TaskCardEditBlockButton>
+          <TaskCardEditBlockButton onClick={completeHandler}>
             <img src={Ellipse1} alt="circle2" />
           </TaskCardEditBlockButton>
         </TaskCardEditBlockItem>

@@ -18,6 +18,7 @@ import {
 // };
 
 const WidgetCard = (props) => {
+  // eslint-disable-next-line no-unused-vars
   const [state, dispatch] = useContext(Context);
 
   const filterValueChangeHandler = (e) => {

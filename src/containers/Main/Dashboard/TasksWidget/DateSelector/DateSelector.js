@@ -22,7 +22,7 @@ const DateSelector = (props) => {
   );
   return (
     <DateSelectorStyled>
-      {console.log("DateSelector renders")}
+      {/*{console.log("DateSelector renders")}*/}
       <Medium15Font
         color={(props) => props.theme.colors.blackColor}
         style={{

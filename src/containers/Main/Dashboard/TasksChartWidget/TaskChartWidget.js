@@ -33,7 +33,7 @@ const TasksChartWidget = () => {
       defaultValue="thisMonth"
       styleWidgetCard={{ height: "382px" }}
     >
-      {console.log("WidgetCard render")}
+      {/*{console.log("WidgetCard render")}*/}
       <TasksChartGenerator data={taskStats} />
     </WidgetCard>
   );
