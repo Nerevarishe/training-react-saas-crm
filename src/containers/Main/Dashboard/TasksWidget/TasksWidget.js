@@ -76,6 +76,7 @@ const TasksWidget = () => {
   }, [
     filterValue,
     state.tasksWidget.tasksOnPage,
+    state.tasksWidget.updateTitle,
     state.dateSelector.selectedDate,
   ]);
 

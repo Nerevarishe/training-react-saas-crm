@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import Ellipse from "./img/svg/Ellipse.svg";
 import Ellipse1 from "./img/svg/Ellipse-1.svg";
@@ -15,34 +15,22 @@ import { TaskCardEditBlock } from "./TaskCardEditBlock";
 import { TaskCardEditBlockItem } from "./TaskCardEditBlockItem";
 import { convertToDate } from "../../utils/timeConverter";
 import TaskCardEditBlockButton from "./TaskCardEditBlockButton";
-import { changeTaskStatus, getTaskCardData } from "./utils";
+import { changeTaskStatus } from "./utils";
+import { Context } from "../../globalStore/store";
+import { TASKS_WIDGET_TASK_CARD_STATUS_CHANGED } from "../../globalStore/reducer";
 
 const TaskCard = (props) => {
-  const [data, setData] = useState(null);
-  const firstRun = useRef(true);
-  const [needRender, setNeedRender] = useState(0);
-
-  useEffect(() => {
-    if (firstRun.current) {
-      firstRun.current = false;
-      return;
-    }
-    const fetchData = async () => {
-      const response = await getTaskCardData(props.data.task._id.$oid);
-      setData(response.data);
-
-    };
-    fetchData();
-  }, [needRender]);
+  // eslint-disable-next-line no-unused-vars
+  const [state, dispatch] = useContext(Context);
 
   const completeHandler = async () => {
     await changeTaskStatus(props.data.task._id.$oid, "Completed");
-    setNeedRender(needRender + 1);
+    dispatch({ type: TASKS_WIDGET_TASK_CARD_STATUS_CHANGED });
   };
 
   const activeHandler = async () => {
     await changeTaskStatus(props.data.task._id.$oid, "Active");
-    setNeedRender(needRender + 1);
+    dispatch({ type: TASKS_WIDGET_TASK_CARD_STATUS_CHANGED });
   };
   // const editHandler = () => {};
   // const deleteHandler = () => {
@@ -100,9 +88,7 @@ const TaskCard = (props) => {
           </TaskCardEditBlockButton>
         </TaskCardEditBlockItem>
       </TaskCardEditBlock>
-      <TaskCardStatus
-        status={data ? data["task_status"] : props.data["task"]["task_status"]}
-      />
+      <TaskCardStatus status={props.data["task"]["task_status"]} />
     </TaskCardStyled>
   );
 };

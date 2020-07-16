@@ -6,6 +6,7 @@ const initialState = {
     isSideBarPulledOut: false,
   },
   tasksWidget: {
+    updateTitle: 0,
     tasksOnPage: 3,
   },
   dateSelector: {
