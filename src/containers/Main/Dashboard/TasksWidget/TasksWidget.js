@@ -10,7 +10,11 @@ import {
 import TertiaryButton from "../../../../components/buttons/TertiaryButton";
 import { getTasks } from "./utils";
 import { Context } from "../../../../globalStore/store";
-import { TASKS_WIDGET_SET_PER_PAGE } from "../../../../globalStore/reducer";
+import {
+  DATE_SELECTOR_RESET,
+  TASKS_WIDGET_RESET,
+  TASKS_WIDGET_SET_PER_PAGE,
+} from "../../../../globalStore/reducer";
 
 const styleWidgetCard = {
   width: "635px",
@@ -76,7 +80,7 @@ const TasksWidget = () => {
   }, [
     filterValue,
     state.tasksWidget.tasksOnPage,
-    state.tasksWidget.updateTitle,
+    state.tasksWidget.updateWidget,
     state.dateSelector.selectedDate,
   ]);
 
@@ -95,6 +99,7 @@ const TasksWidget = () => {
       showFilter
       filterValue={setFilterValue}
       defaultValue="thisWeek"
+      dispatchResetTypes={[DATE_SELECTOR_RESET, TASKS_WIDGET_RESET]}
       styleWidgetCard={styleWidgetCard}
       styleWidgetCardFilterSelect={styleWidgetCardFilterSelect}
       styleContentPaddingTop={{ paddingTop: "16px" }}

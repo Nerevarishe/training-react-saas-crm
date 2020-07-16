@@ -32,8 +32,7 @@ const Reducer = (state, action) => {
         ...state,
         tasksWidget: {
           ...state.tasksWidget,
-          // updateTitle: action.data,
-          updateTitle: state.tasksWidget.updateTitle + 1,
+          updateWidget: state.tasksWidget.updateWidget + 1,
         },
       };
 
@@ -42,6 +41,7 @@ const Reducer = (state, action) => {
         ...state,
         tasksWidget: {
           ...state.tasksWidget,
+          updateWidget: 0,
           tasksOnPage: 3,
         },
       };

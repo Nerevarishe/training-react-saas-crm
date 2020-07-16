@@ -7,10 +7,6 @@ import Select from "./Select";
 import { Divider } from "./Divider";
 import { Content } from "./Content";
 import { Context } from "../../globalStore/store";
-import {
-  DATE_SELECTOR_RESET,
-  TASKS_WIDGET_RESET,
-} from "../../globalStore/reducer";
 
 // const widgetContent = {
 //   title: "Title",
@@ -20,11 +16,12 @@ import {
 const WidgetCard = (props) => {
   // eslint-disable-next-line no-unused-vars
   const [state, dispatch] = useContext(Context);
-
   const filterValueChangeHandler = (e) => {
-    // TODO: Check how refactor dispatch part
-    dispatch({ type: DATE_SELECTOR_RESET });
-    dispatch({ type: TASKS_WIDGET_RESET });
+    if (props.dispatchResetTypes) {
+      props.dispatchResetTypes.forEach((dispatchType) =>
+        dispatch({ type: dispatchType })
+      );
+    }
     return props.filterValue(e.target.value);
   };
 
@@ -71,6 +68,7 @@ WidgetCard.propTypes = {
   showTitle: PropTypes.bool,
   customTitle: PropTypes.element,
   showFilter: PropTypes.bool,
+  dispatchResetTypes: PropTypes.array,
   widgetContent: PropTypes.object,
   styleWidgetCard: PropTypes.object,
   styleWidgetCardFilterSelect: PropTypes.object,

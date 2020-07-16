@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import WidgetCard from "../../../../components/WidgetCard";
 import TasksChartGenerator from "./TasksChartGenerator";
 import { getTaskStats } from "./utils";
+import { Context } from "../../../../globalStore/store";
+import { TASKS_WIDGET_RESET } from "../../../../globalStore/reducer";
 
 const widgetContent = {
   title: "Tasks",
   filterOptions: [
     { id: 0, text: "Previous Month", value: "prevMonth" },
-    { id: 1, text: "This Month", value: "thisMonth", selected: true },
+    { id: 1, text: "This Month", value: "thisMonth" },
     { id: 2, text: "Next Month", value: "nextMonth" },
   ],
 };
@@ -15,6 +17,8 @@ const widgetContent = {
 const TasksChartWidget = () => {
   const [taskStats, setTaskStats] = useState(null);
   const [filterValue, setFilterValue] = useState("thisMonth");
+  // eslint-disable-next-line no-unused-vars
+  const [state, dispatch] = useContext(Context);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,7 +26,7 @@ const TasksChartWidget = () => {
       setTaskStats(response.data);
     };
     fetchData();
-  }, [filterValue]);
+  }, [filterValue, state.tasksWidget.updateWidget]);
 
   return (
     <WidgetCard
@@ -33,7 +37,6 @@ const TasksChartWidget = () => {
       defaultValue="thisMonth"
       styleWidgetCard={{ height: "382px" }}
     >
-      {/*{console.log("WidgetCard render")}*/}
       <TasksChartGenerator data={taskStats} />
     </WidgetCard>
   );
