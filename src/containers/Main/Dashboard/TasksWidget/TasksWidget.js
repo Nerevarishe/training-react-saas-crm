@@ -116,6 +116,7 @@ const TasksWidget = () => {
         : null}
 
       <div style={{ display: "flex", justifyContent: "center" }}>
+        {/* TODO: Check why button animated when it disabled */}
         <TertiaryButton onClick={showMoreHandler} disabled={disabled}>
           <Semibold13Font>Show More</Semibold13Font>
         </TertiaryButton>

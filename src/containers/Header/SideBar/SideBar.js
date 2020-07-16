@@ -19,7 +19,6 @@ import SideBarItem from "./SideBarItem";
 import ProfileUser from "./ProfileUser";
 import { SideBarTitle } from "./SideBarTitle";
 import { SideBarTitleText } from "./SideBarTitleText";
-import { HeaderDivider } from "./HeaderDivider";
 import { SideBarMenu } from "./SideBarMenu";
 import { SideBarToggle } from "./SideBarToggle";
 import { Medium11Font } from "../../../components/Fonts/Fonts";
@@ -121,8 +120,6 @@ const SideBar = () => {
           Kit
         </SideBarTitleText>
       </SideBarTitle>
-
-      <HeaderDivider />
 
       <ProfileUser
         avatar={profile.avatar}

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const HeaderDivider = styled.div`
+const HeaderDivider = styled.div`
   height: 1px;
   width: 100vw;
   position: absolute;
@@ -8,4 +8,7 @@ export const HeaderDivider = styled.div`
   top: 60px;
   background: ${(props) => props.theme.colors.dividerColor};
   margin-bottom: 24px;
+  z-index: 1;
 `;
+
+export default HeaderDivider;
