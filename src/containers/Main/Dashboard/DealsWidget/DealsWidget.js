@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import WidgetCard from "../../../../components/WidgetCard";
 import DealsChartGenerator from "./DealsChartGenerator";
+import { getDealsChartData } from "./utils";
 
 const widgetContent = {
   title: "Deals",
-  // filterOptions: ["Yearly", "Quarterly", "Monthly", "Weekly"],
   filterOptions: [
     { id: 0, text: "Yearly", value: "yearly" },
     { id: 1, text: "Quarterly", value: "quarterly" },
@@ -14,6 +14,15 @@ const widgetContent = {
 };
 
 const DealsWidget = () => {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await getDealsChartData();
+      setData(response.data);
+    };
+    fetchData();
+  }, []);
   return (
     <WidgetCard
       styleWidgetCard={{ width: "445px", height: "344px" }}
@@ -22,7 +31,7 @@ const DealsWidget = () => {
       widgetContent={widgetContent}
       styleWidgetCardFilterSelect={{ width: "70px" }}
     >
-      <DealsChartGenerator />
+      <DealsChartGenerator data={data}/>
     </WidgetCard>
   );
 };
