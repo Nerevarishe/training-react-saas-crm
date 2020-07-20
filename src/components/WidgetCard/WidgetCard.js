@@ -68,6 +68,7 @@ WidgetCard.propTypes = {
   showTitle: PropTypes.bool,
   customTitle: PropTypes.element,
   showFilter: PropTypes.bool,
+  defaultValue: PropTypes.string,
   dispatchResetTypes: PropTypes.array,
   widgetContent: PropTypes.object,
   styleWidgetCard: PropTypes.object,

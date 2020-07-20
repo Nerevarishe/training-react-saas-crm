@@ -42,6 +42,7 @@ const TasksChartGenerator = (props) => {
         },
       },
     });
+    return () => myChart.destroy();
   }, [
     props.data,
     props.theme.colors.greenColor,
