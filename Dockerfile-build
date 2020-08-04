@@ -1,0 +1,3 @@
+FROM nerevarishe/saas-crm-dashboard-node-dependencies:latest as frontend-build
+COPY ./frontend ./
+RUN npm run build
