@@ -1,3 +1,0 @@
-FROM nerevarishe/nginx-alpine:latest
-WORKDIR /usr/share/nginx/html
-COPY --from=nerevarishe/node-saas-crm-dashboard-build:latest /root/frontend/build ./
