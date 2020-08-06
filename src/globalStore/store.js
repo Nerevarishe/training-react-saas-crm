@@ -12,6 +12,12 @@ const initialState = {
   dateSelector: {
     selectedDate: null,
   },
+  dealsWidget: {
+    updateWidget: 0,
+  },
+  tasksChartWidget: {
+    updateWidget: 0,
+  },
   auth: {
     isLoggedIn: true,
     username: "Sierra Ferguson",

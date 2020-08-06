@@ -5,6 +5,8 @@ export const TASKS_WIDGET_SET_PER_PAGE = "TASKS_WIDGET_SET_PER_PAGE";
 export const TASKS_WIDGET_TASK_CARD_STATUS_CHANGED =
   "TASKS_WIDGET_TASK_CARD_STATUS_CHANGED";
 export const TASKS_WIDGET_RESET = "TASKS_WIDGET_RESET";
+export const UPDATE_WIDGETS_AFTER_DATA_GENERATION =
+  "UPDATE_WIDGETS_AFTER_DATA_GENERATION";
 
 const Reducer = (state, action) => {
   switch (action.type) {
@@ -17,7 +19,24 @@ const Reducer = (state, action) => {
         },
       };
 
-    // Components:
+    // Components
+    // Data generation
+    case UPDATE_WIDGETS_AFTER_DATA_GENERATION:
+      return {
+        ...state,
+        tasksWidget: {
+          ...state.tasksWidget,
+          updateWidget: state.tasksWidget.updateWidget + 1,
+        },
+        dealsWidget: {
+          ...state.dealsWidget,
+          updateWidget: state.dealsWidget.updateWidget + 1,
+        },
+        tasksChartWidget: {
+          ...state.tasksChartWidget,
+          updateWidget: state.tasksChartWidget.updateWidget + 1,
+        },
+      };
     // TasksWidget
     case TASKS_WIDGET_SET_PER_PAGE:
       return {

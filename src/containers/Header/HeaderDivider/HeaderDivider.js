@@ -5,7 +5,7 @@ const HeaderDivider = styled.div`
   width: 100vw;
   position: absolute;
   left: 0;
-  top: 60px;
+  top: 120px;
   background: ${(props) => props.theme.colors.dividerColor};
   margin-bottom: 24px;
   z-index: 1;
