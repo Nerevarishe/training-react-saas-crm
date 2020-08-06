@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, {useContext, useEffect, useState} from "react";
 import WidgetCard from "../../../../components/WidgetCard";
 import DealsChartGenerator from "./DealsChartGenerator";
 import { getDealsChartData } from "./utils";
+import {Context} from "../../../../globalStore/store";
 
 const widgetContent = {
   title: "Deals",
@@ -16,13 +17,15 @@ const widgetContent = {
 const DealsWidget = () => {
   const [data, setData] = useState(null);
   const [filterValue, setFilterValue] = useState("monthly");
+  const [state, dispatch] = useContext(Context);
+
   useEffect(() => {
     const fetchData = async () => {
       const response = await getDealsChartData(filterValue);
       setData(response.data);
     };
     fetchData();
-  }, [filterValue]);
+  }, [filterValue, state.dealsWidget.updateWidget]);
   return (
     <WidgetCard
       styleWidgetCard={{ width: "445px", height: "344px" }}

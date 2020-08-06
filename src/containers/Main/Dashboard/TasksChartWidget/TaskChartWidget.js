@@ -26,7 +26,7 @@ const TasksChartWidget = () => {
       setTaskStats(response.data);
     };
     fetchData();
-  }, [filterValue, state.tasksWidget.updateWidget]);
+  }, [filterValue, state.tasksWidget.updateWidget, state.tasksChartWidget.updateWidget]);
 
   return (
     <WidgetCard
