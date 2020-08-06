@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosBaseConfig = {
-  baseURL: "http://127.0.0.1:5000",
+  baseURL: "http://192.168.56.118/api",
 };
 
 const axiosDefaultInstance = axios.create(axiosBaseConfig);
