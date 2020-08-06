@@ -3,10 +3,10 @@ import { withTheme } from "styled-components";
 import Chart from "chart.js";
 
 const TasksChartGenerator = (props) => {
-  const [state, setState] = useState(null);
+  const [localState, setLocalState] = useState(null);
 
   useEffect(() => {
-    setState(props.data);
+    setLocalState(props.data);
     const ctx = document.getElementById("tasksChartGenerator");
     // eslint-disable-next-line no-unused-vars
     const myChart = new Chart(ctx, {
@@ -16,9 +16,15 @@ const TasksChartGenerator = (props) => {
         datasets: [
           {
             data: [
-              state !== null ? state["tasks_stat"]["completed_tasks"] : null,
-              state !== null ? state["tasks_stat"]["active_tasks"] : null,
-              state !== null ? state["tasks_stat"]["ended_tasks"] : null,
+              localState !== null
+                ? localState["tasks_stat"]["completed_tasks"]
+                : null,
+              localState !== null
+                ? localState["tasks_stat"]["active_tasks"]
+                : null,
+              localState !== null
+                ? localState["tasks_stat"]["ended_tasks"]
+                : null,
             ],
             backgroundColor: [
               `${props.theme.colors.greenColor}`,
@@ -48,7 +54,7 @@ const TasksChartGenerator = (props) => {
     props.theme.colors.greenColor,
     props.theme.colors.redColor,
     props.theme.colors.yellowColor,
-    state,
+    localState,
   ]);
 
   return (
@@ -72,7 +78,11 @@ const TasksChartGenerator = (props) => {
           color: props.theme.colors.greenColor,
         }}
       >
-        {state !== null ? state["tasks_stat"]["completed_tasks"] + "%" : null}
+        {localState !== null
+          ? localState["tasks_stat"]["completed_tasks"] !== 0
+            ? localState["tasks_stat"]["completed_tasks"] + "%"
+            : null
+          : null}
       </span>
     </div>
   );
