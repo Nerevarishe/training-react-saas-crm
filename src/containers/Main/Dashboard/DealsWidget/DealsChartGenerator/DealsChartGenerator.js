@@ -68,7 +68,7 @@ const DealsChartGenerator = (props) => {
       },
     });
     return () => myChart.destroy();
-  });
+  }, [props.data]);
 
   return <canvas id="dealsChart" height="200px" />;
 };
