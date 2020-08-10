@@ -7,6 +7,7 @@ export const TASKS_WIDGET_TASK_CARD_STATUS_CHANGED =
 export const TASKS_WIDGET_RESET = "TASKS_WIDGET_RESET";
 export const UPDATE_WIDGETS_AFTER_DATA_GENERATION =
   "UPDATE_WIDGETS_AFTER_DATA_GENERATION";
+export const TOGGLE_LOADER = "TOGGLE_LOADER";
 
 const Reducer = (state, action) => {
   switch (action.type) {
@@ -15,10 +16,18 @@ const Reducer = (state, action) => {
       return {
         ...state,
         appState: {
+          ...state.appState,
           isSideBarPulledOut: !state.appState.isSideBarPulledOut,
         },
       };
-
+    case TOGGLE_LOADER:
+      return {
+        ...state,
+        appState: {
+          ...state.appState,
+          toggleLoader: action.data,
+        },
+      };
     // Components
     // Data generation
     case UPDATE_WIDGETS_AFTER_DATA_GENERATION:

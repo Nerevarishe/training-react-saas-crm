@@ -4,6 +4,7 @@ import Reducer from "./reducer";
 const initialState = {
   appState: {
     isSideBarPulledOut: false,
+    toggleLoader: false,
   },
   tasksWidget: {
     updateWidget: 0,
